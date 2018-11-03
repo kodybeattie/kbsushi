@@ -367,7 +367,8 @@ img {
     text-align: center;
     border-left: 1px solid #ebebeb;
     height: 100%;
-    line-height: 80px; }
+    
+    padding: 30px }
     @media only screen and (max-width: 767px) {
       .header_area .favourite-area a,
       .header_area .user-login-info a,
@@ -389,12 +390,14 @@ img {
       color: #0315ff;
       font-weight: 700;
       position: absolute;
-      top: -10px; }
+      top: -10px;
+      line-height: 100px;
+      left: 65px; }
       @media only screen and (max-width: 767px) {
         .header_area .favourite-area a span,
         .header_area .user-login-info a span,
         .header_area .cart-area a span {
-          font-size: 14px; } }
+          font-size: 14px;} }
   .header_area.sticky {
     position: fixed;
     z-index: 900;

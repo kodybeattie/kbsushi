@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
 
-    <div class="limiter">
+    <div class="limiter background-display">
         <div class="container-login100">
             <div class="wrap-login100">
                 <form class="login100-form validate-form">

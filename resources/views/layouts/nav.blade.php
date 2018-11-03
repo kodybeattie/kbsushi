@@ -14,6 +14,7 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
     <link rel="stylesheet" href="css/style.css">
+    
 
 </head>
 
@@ -39,7 +40,8 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="/">Home</a>
-                          
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login">Login</a></li>
                            
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>

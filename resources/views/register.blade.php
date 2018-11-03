@@ -1,25 +1,64 @@
   
 @include ('layouts.nav')
-  <div class="single-blog-post-thumb">
- 
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8">
-                    <div class="regular-page-content-wrapper section-padding-80">
-                        <div class="regular-page-text">
-                            <h2>About Us</h2>
-                            <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin. Praesent at tempus lectus, eleifend blandit felis. Fusce augue arcu, consequat a nisl aliquet, consectetur elementum turpis. Donec iaculis lobortis nisl, et viverra risus imperdiet eu. Etiam mollis posuere elit non sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis arcu a magna sodales venenatis. Integer non diam sit amet magna luctus mollis ac eu nisi. In accumsan tellus ut dapibus blandit.</p>
 
-                            <blockquote>
-                                <h6><i class="fa fa-quote-left" aria-hidden="true"></i> Quisque sagittis non ex eget vestibulum. Sed nec ultrices dui. Cras et sagittis erat. Maecenas pulvinar, turpis in dictum tincidunt, dolor nibh lacinia lacus.</h6>
-                                <span>Liam Neeson</span>
-                            </blockquote>
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+<div class="limiter background-display">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class="fa">&#xf263;</i>
+					</span>
 
-                            <p>Praesent ac magna sed massa euismod congue vitae vitae risus. Nulla lorem augue, mollis non est et, eleifend elementum ante. Nunc id pharetra magna. Praesent vel orci ornare, blandit mi sed, aliquet nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                        </div>
+					<span class="login100-form-title p-b-34 p-t-27">
+						Register
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter firstName">
+						<input class="input100" type="text" name="firstName" placeholder="First Name">
+						<span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter lastName">
+						<input class="input100" type="text" name="lastName" placeholder="Last Name">
+                        <span class="focus-input100 fa" data-placeholder="&#xf007;">
+                            
+                        </span>
+                        
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter email">
+						<input class="input100" type="email" name="email" placeholder="Email">
+						<span class="focus-input100 fa" data-placeholder="&#xf003;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter Phone Number">
+						<input class="input100" type="text" name="Phone Number" placeholder="Phone Number">
+						<span class="focus-input100 fa" data-placeholder="&#xf095;"></span>
+                    </div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input" data-validate="password confirm">
+						<input class="input100" type="password" name="confrimPassword" placeholder="Confirm Pasword">
+						<span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
+					</div>
+
+	
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Register
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
     @include ('layouts.foot')
