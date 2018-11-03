@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Preferences extends Migration
+class CreateProductIngredientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class Preferences extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('product_ingredients', function (Blueprint $table) {
+            $table->integer('product_id');
+            $table->integer('ing_id');
+            $table->float('quantity', 5, 2);
+            $table->integer('units');
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Preferences extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('product_ingredients');
     }
 }

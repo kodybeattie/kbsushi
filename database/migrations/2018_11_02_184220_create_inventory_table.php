@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Favourites extends Migration
+class CreateInventoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class Favourites extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('inventory', function (Blueprint $table) {
+            $table->increments('ing_id');
+            $table->string('ing_name');
+            $table->float('quantity', 6, 2);
+            $table->integer('units');
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Favourites extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('inventory');
     }
 }
