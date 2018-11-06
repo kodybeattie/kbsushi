@@ -78,7 +78,7 @@
                                    <span class="mini-click-non">Kiyoshi Bai Sushi</span>
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard</span></a></li>
+                                <li><a title="Dashboard v.1" href="/dashboard"><span class="mini-sub-pro">Dashboard</span></a></li>
 
                                 <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
                                 <li><a title="Product Detail" href="/addproduct"><span class="mini-sub-pro">Add a Product</span></a></li>

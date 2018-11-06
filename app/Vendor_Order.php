@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vendor extends Model
+class Vendor_Order extends Model
 {
     public function vendor_order()
     {
-      return $this->belongsTo(Vendor_Order::class);
+      $this->belongsTo(Vendor_Order::class);
     }
 }

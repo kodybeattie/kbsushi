@@ -10,4 +10,19 @@ class Product extends Model
   {
     return $this->hasMany(Ingredient::class);
   }
+
+  public function order()
+  {
+    return $this->belongsTo(Order::class);
+  }
+
+  public function vendor_order()
+  {
+    return $this->belongsTo(Vendor_Order::class);
+  }
+
+  public function cart()
+  {
+    return $this->belongsTo(Cart::class);
+  }
 }

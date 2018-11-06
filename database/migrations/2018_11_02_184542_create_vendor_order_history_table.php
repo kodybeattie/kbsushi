@@ -16,7 +16,8 @@ class CreateVendorOrderHistoryTable extends Migration
         Schema::create('vendor_order_history', function (Blueprint $table) {
             $table->increments('order_id');
             $table->integer('vendor_id');
-            $table->integer('ing_id');
+            $table->integer('ing_id')->nullable();
+            $table->integer('product_id')->nullable();
             $table->float('quantity', 6, 2);
             $table->integer('units');
             $table->float('cost' , 6, 2);
