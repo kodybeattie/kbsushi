@@ -28,8 +28,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function Order(Order $order)
+/* NOT SURE IF THIS IS RIGHT OR EVEN NEEDED YET
+    public function order(Order $order)
     {
       $this->orders()->save($order);
+    }
+*/
+
+    public function orders()
+    {
+      return $this->hasMany(Order::class);
+    }
+
+    public function cart()
+    {
+      return $this->hasOne(Cart::class);
     }
 }
