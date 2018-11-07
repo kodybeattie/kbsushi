@@ -12,9 +12,8 @@
 */
 
 /* LESSON 1*/ 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index')->name('home');
+
 Route::get('/sushi', function () {
     return view('sushi');
 });
@@ -38,9 +37,9 @@ Route::get('/orders', function () {
     return view('backend/orders');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register','RegisterController@create')->name('register');
+
+Route::post('/register','RegisterController@store');
 
 Route::get('/login', function () {
     return view('login');
@@ -51,10 +50,3 @@ Route::get('/checkout', function () {
     return view('checkout');
 });
 
-
-
-
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
