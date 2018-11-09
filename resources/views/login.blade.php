@@ -11,7 +11,7 @@
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-logo">
-                        <i class="fa">&#xf263;</i>
+                        <i class="far" style="color:#5a3791;">&#xf2bd;</i>
                     </span>
 
                     <span class="login100-form-title p-b-34 p-t-27">
