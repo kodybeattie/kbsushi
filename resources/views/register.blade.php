@@ -1,17 +1,17 @@
-  
+
 @include ('layouts.nav')
 
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    
+
 <div class="limiter background-display">
-    
+
     <div class="container-login100">
-        
+
         <div class="wrap-login100">
-            
+
             <form action="{{route('register')}}" method="post" >
-            
+
                 {{ csrf_field() }}
 
                 <span class="login100-form-logo">
@@ -30,9 +30,9 @@
                 <div class="wrap-input100 validate-input" data-validate = "Enter lastName">
                     <input class="input100" type="text" name="last_name" placeholder="Last Name">
                     <span class="focus-input100 fas" data-placeholder="&#xf504;">
-                        
+
                     </span>
-                    
+
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter email">
@@ -49,20 +49,18 @@
                     <input class="input100" type="password" name="password" placeholder="Password">
                     <span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
                 </div>
-                
+
                 <div class="wrap-input100 validate-input" data-validate="password confirm">
-                    <input class="input100" type="password" name="confrimPassword" placeholder="Confirm Pasword">
+                    <input class="input100" type="password" name="password_confirmation" placeholder="Confirm Pasword">
                     <span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
                 </div>
-
-
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
                         Register
                     </button>
                 </div>
-
+                @include ('layouts.error')
             </form>
         </div>
     </div>

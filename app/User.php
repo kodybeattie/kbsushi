@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id','first_name', 'last_name', 'email_address', 'phone_number', 'password',
+        'user_id','first_name', 'last_name', 'email_address', 'phone_number', 'password'
     ];
 
     /**
@@ -28,12 +28,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-/* NOT SURE IF THIS IS RIGHT OR EVEN NEEDED YET
-    public function order(Order $order)
+    public function checkout(Order $order)
     {
       $this->orders()->save($order);
     }
-*/
 
     public function orders()
     {
