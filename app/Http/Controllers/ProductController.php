@@ -40,7 +40,7 @@ class ProductController extends Controller
 		
 		auth()->user()->publish(//The new Poduct to add into the database with fields
 		);
-		session()->flash('message', 'Your post is complete.');
+		session()->flash('message', 'New product has been added!');
 		return redirect('/');
     }
 }
