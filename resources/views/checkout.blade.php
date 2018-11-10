@@ -1,5 +1,5 @@
-  
-@include ('layouts.nav')
+
+ @include ('layouts.nav')
     <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -14,8 +14,8 @@
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Checkout Area Start ##### -->
-    
-            
+
+
 
                 <div class="col-md-12">
                     <div class="order-details-confirmation">
@@ -31,7 +31,7 @@
                             <li><span>Maguro Nigiri x 2</span><span>$12.50</span></li>
                             <li><span>Hamachi x 1</span><span>$12.50</span></li>
                             <li><span>Subtotal</span> <span>$59.90</span></li>
-                            
+
                             <li><span>Total</span> <span>$40.95</span></li>
                         </ul>
 
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                             </div>
-                         
+
                         </div>
 
                         <a href="#" class="btn essence-btn">Place Order</a>

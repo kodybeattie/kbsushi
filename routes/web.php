@@ -21,30 +21,30 @@ Route::get('/sushi', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
 Route::get('/about', function () {
     return view('about');
 });
+
 Route::get('/productlist', function () {
     return view('backend/productlist');
-});
+})->middleware('auth');
+
 Route::get('/addproduct', function () {
     return view('backend/addproduct');
-});
+})->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('backend/dashboard');
 });
+
 Route::get('/orders', function () {
     return view('backend/orders');
-});
+})->middleware('auth');
 
 Route::get('/register','RegisterController@create')->name('register');
-
 Route::post('/register','RegisterController@store');
-/*
-Route::get('/login', function () {
-    return view('login');
-});
-*/
+
 Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login','LoginController@store');
 Route::get('/logout', 'LoginController@destroy');
@@ -52,4 +52,4 @@ Route::get('/logout', 'LoginController@destroy');
 
 Route::get('/checkout', function () {
     return view('checkout');
-});
+})->middleware('auth');

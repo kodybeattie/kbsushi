@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 
-    
+
 
 </head>
 
@@ -43,11 +44,23 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="/">Home</a>
-                            <li><a href="/register">Register</a></li>
-                            <li><a href="/login">Login</a></li>
-                           
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>
+                        <?php
+                        if (Auth::guest())
+                        {
+                        ?>
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login">Login</a></li>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                            <li><a href="/logout">Logout</a></li>
+                        <?php
+                        }
+                        ?>
                         </ul>
                     </div>
                     <!-- Nav End -->
