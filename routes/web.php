@@ -11,7 +11,7 @@
 |
 */
 
-/* LESSON 1*/ 
+/* LESSON 1*/
 Route::get('/','HomeController@index')->name('home');
 
 Route::get('/sushi', function () {
@@ -40,13 +40,16 @@ Route::get('/orders', function () {
 Route::get('/register','RegisterController@create')->name('register');
 
 Route::post('/register','RegisterController@store');
-
+/*
 Route::get('/login', function () {
     return view('login');
 });
+*/
+Route::get('/login', 'LoginController@create')->name('login');
+Route::post('/login','LoginController@store');
+Route::get('/logout', 'LoginController@destroy');
 
 
 Route::get('/checkout', function () {
     return view('checkout');
 });
-

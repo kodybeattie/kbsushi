@@ -25,7 +25,7 @@ class RegisterController extends Controller
           'last_name' => request('last_name'),
           'email_address' => request('email_address'),
           'phone_number' => request('phone_number'),
-          'password' => request('password')]);
+          'password' => bcrypt(request('password'))]);
 
       auth()->login($user);
       return redirect()->home();

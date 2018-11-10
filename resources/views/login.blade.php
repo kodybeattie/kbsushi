@@ -1,4 +1,4 @@
-  
+
 @include ('layouts.nav')
 
 
@@ -9,7 +9,9 @@
     <div class="limiter background-display">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+                <form action="{{route('login')}}" method="post">
+                  {{ csrf_field() }}
+
                     <span class="login100-form-logo">
                         <i class="far" style="color:#5a3791;">&#xf2bd;</i>
                     </span>
@@ -19,15 +21,15 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Enter user name">
-                        <input class="input100" type="text" name="username" placeholder="Username">
+                        <input class="input100" type="text" name="email_address" placeholder="Username">
                         <span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
                     </div>
-                
+
 
                     <div class="contact100-form-checkbox">
                         <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -47,6 +49,7 @@
                             Forgot Password?
                         </a>
                     </div>
+                    @include ('layouts.error')
                 </form>
             </div>
         </div>
