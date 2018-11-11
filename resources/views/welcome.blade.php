@@ -11,7 +11,7 @@
                     <div class="hero-content">
                         <h6></h6>
                         <h2>Kiyoshi Bai Sushi</h2>
-                        
+
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(images/drinks.jpg);">
                         <div class="catagory-content">
-                            <a href="#">Drinks</a>
+                            <a href="/drinks">Drinks</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-  
+
     </section>
     <!-- ##### New Arrivals Area End ##### -->
 

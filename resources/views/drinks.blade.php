@@ -23,11 +23,11 @@
       <div class="layout-inline row row-bg2">
 
         <div class="col col-pro layout-inline">
-          <p>Stuff</p>
+          <p>Coke</p>
         </div>
 
         <div class="col col-price col-numeric align-center ">
-          <p>$15.95</p>
+          <p>$3.95</p>
         </div>
 
         <div class="col col-qty layout-inline">
@@ -39,7 +39,7 @@
       </div>
 
 
-    <a href="#" class="btn btn-update">Check out</a>
+    <a href="#" class="btn btn-update">Update cart</a>
 
 </div>
 </div>

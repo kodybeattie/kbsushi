@@ -18,6 +18,10 @@ Route::get('/sushi', function () {
     return view('sushi');
 });
 
+Route::get('/drinks', function () {
+    return view('drinks');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -49,6 +53,9 @@ Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login','LoginController@store');
 Route::get('/logout', 'LoginController@destroy');
 
+Route::get('/cart', function () {
+    return view('cart');
+})->middleware('auth');
 
 Route::get('/checkout', function () {
     return view('checkout');
