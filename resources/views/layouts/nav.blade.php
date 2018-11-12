@@ -1,4 +1,8 @@
 <?php use Illuminate\Support\Facades\Auth; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -16,8 +20,25 @@
     <link rel="stylesheet" href="css/core-style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
+    <script type="text/javascript">
+        function increaseValue() {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+    }
 
+    function decreaseValue() {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    document.getElementById('number').value = value;
+    }
+    </script>
 
 
 </head>
@@ -74,10 +95,17 @@
                 <div class="favourite-area">
                     <a href="#"><img src="/images/like.png" alt=""></a>
                 </div>
+                <?php
+                if (!Auth::guest())
+                {
+                  ?>  
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="#"><img src="/images/account.png" alt=""></a>
+                    <a href="/settings/{id}"><img src="/images/account.png" alt=""></a>
                 </div>
+                <?php
+                }
+                ?>
                 <!-- Cart Area -->
                 <div class="cart-area">
                     <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>

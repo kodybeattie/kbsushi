@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 
 @include ('layouts.nav')
 
@@ -77,6 +76,4 @@
 
 
 
-</body>
 
-</html>

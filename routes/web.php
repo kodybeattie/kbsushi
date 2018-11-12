@@ -22,6 +22,8 @@ Route::get('/drinks', function () {
     return view('drinks');
 });
 
+Route::get('/settings','SettingsController@show');
+
 Route::get('/contact', function () {
     return view('contact');
 });
