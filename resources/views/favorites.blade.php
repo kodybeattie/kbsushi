@@ -9,6 +9,12 @@
         <div class="container-login100">
             <div class="wrap-login100">
             	This is where favorites will be listed depending on the users id. refer to how COMMENTS are listed.
+
+            	PLan: Display all products. 
+            	2? buttons per product
+            	1 button adds to fave
+            	1 removes
+            	
             </div>
         </div>
     </div>

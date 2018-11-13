@@ -79,6 +79,7 @@
                         {
                         ?>
                             <li><a href="/logout">Logout</a></li>
+                            <li><a href="/favorites">Favorite</a></li>
                         <?php
                         }
                         ?>
