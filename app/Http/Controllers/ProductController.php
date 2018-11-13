@@ -25,6 +25,11 @@ class ProductController extends Controller
     	return view('product.show', compact('product'));
     }
 
+
+   public function addProduct(Request $request){
+   return view('backend/addproduct');
+   }
+
     public function create()
     {
     	return view('products.create');

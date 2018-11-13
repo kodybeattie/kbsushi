@@ -46,6 +46,13 @@ Route::get('/addproduct', function () {
     return view('backend/addproduct');
 })->middleware('auth');
 
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('backend/dashboard');
 });
