@@ -31,9 +31,13 @@
         </div>
 
         <div class="col col-qty layout-inline">
-          <a href="#" class="qty qty-minus">-</a>
-            <input type="numeric" value="0" />
-          <a href="#" class="qty qty-plus">+</a>
+          <div>
+            <button type="button" class="qty qty-minus" id="decrease" onclick="decreaseValue()">-</button>
+          </div>
+            <input type="number" id="number" value="0" />
+          <div>
+            <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue()">+</button>
+          </div>
         </div>
 
       </div>

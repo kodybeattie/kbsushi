@@ -2,8 +2,7 @@
 @include ('layouts.nav')
 
 
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+
 
 
     <div class="limiter background-display">
@@ -20,8 +19,8 @@
                         Login
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Enter user name">
-                        <input class="input100" type="text" name="email_address" placeholder="Username">
+                    <div class="wrap-input100 validate-input" data-validate = "Email">
+                        <input class="input100" type="text" name="email_address" placeholder="Email">
                         <span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
                     </div>
 

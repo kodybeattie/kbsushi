@@ -1,8 +1,6 @@
 
 @include ('layouts.nav')
 
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
 
 <div class="limiter background-display">
 
