@@ -22,7 +22,9 @@ Route::get('/drinks', function () {
     return view('drinks');
 });
 
-Route::get('/settings','SettingsController@show');
+Route::get('/settings','SettingsController@show')->name('settings');
+Route::post('/settings','SettingsController@update');
+
 
 Route::get('/contact', function () {
     return view('contact');

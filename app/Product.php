@@ -33,4 +33,12 @@ class Product extends Model
   {
     return $this->belongsTo(Cart::class);
   }
+
+  public static function getByCategory($category)
+  {
+    return static::selectRaw('*')
+                    ->where('category', '=', $category)
+                    ->get()
+                    ->toArray();
+  }
 }
