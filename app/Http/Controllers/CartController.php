@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-  public function create()
+  public function create($products, $quantities)
   {
-    return view('cart');
+    return view('cart', compact($products), compact($quantities));
   }
 }

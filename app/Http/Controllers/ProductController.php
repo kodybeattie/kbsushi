@@ -37,7 +37,7 @@ class ProductController extends Controller
 
     	]);
 		//The required fields ^^
-		
+
 		auth()->user()->publish(//The new Poduct to add into the database with fields
 		);
 		session()->flash('message', 'New product has been added!');

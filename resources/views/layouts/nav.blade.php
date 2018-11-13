@@ -24,20 +24,22 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <script type="text/javascript">
-        function increaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').value = value;
-    }
+        function increaseValue(id) {
+          var strId = id.toString();
+          var value = parseInt(document.getElementById(strId).value, 10);
+          value = isNaN(value) ? 0 : value;
+          value++;
+          document.getElementById(strId).value = value;
+        }
 
-    function decreaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value < 1 ? value = 1 : '';
-    value--;
-    document.getElementById('number').value = value;
-    }
+      function decreaseValue(id) {
+        var strId = id.toString();
+        var value = parseInt(document.getElementById(strId).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value < 1 ? value = 1 : '';
+        value--;
+        document.getElementById(strId).value = value;
+      }
     </script>
 
 
@@ -98,7 +100,7 @@
                 <?php
                 if (!Auth::guest())
                 {
-                  ?>  
+                  ?>
                 <!-- User Login Info -->
                 <div class="user-login-info">
                     <a href="/settings/{id}"><img src="/images/account.png" alt=""></a>
