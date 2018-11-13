@@ -1,5 +1,8 @@
 
  @include ('layouts.nav')
+ <?php
+ $products = App\Product::getByCategory(1);
+ ?>
 
  <link rel="stylesheet" href="css/product.css">
 
@@ -20,24 +23,29 @@
 
       </div>
 
+    @foreach ($products as $drink)
       <div class="layout-inline row row-bg2">
 
         <div class="col col-pro layout-inline">
-          <p>Coke</p>
+          <p>{{ $drink['product_name'] }}</p>
         </div>
 
         <div class="col col-price col-numeric align-center ">
-          <p>$3.95</p>
+          <p>${{ $drink['price'] }}</p>
         </div>
 
         <div class="col col-qty layout-inline">
-          <a href="#" class="qty qty-minus">-</a>
-            <input type="numeric" value="0" />
-          <a href="#" class="qty qty-plus">+</a>
+          <div>
+            <button type="button" class="qty qty-minus" id="decrease" onclick="decreaseValue({{ $drink['product_id'] }})">-</button>
+          </div>
+            <input type="numeric" id="{{ $drink['product_id'] }}" value="0" readonly />
+          <div>
+            <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $drink['product_id'] }})">+</button>
+          </div>
         </div>
 
       </div>
-
+    @endforeach
 
     <a href="#" class="btn btn-update">Update cart</a>
 
