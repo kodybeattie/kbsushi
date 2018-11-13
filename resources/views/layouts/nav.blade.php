@@ -101,7 +101,7 @@
                   ?>  
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="/settings/{id}"><img src="/images/account.png" alt=""></a>
+                    <a href="/settings"><img src="/images/account.png" alt=""></a>
                 </div>
                 <?php
                 }
