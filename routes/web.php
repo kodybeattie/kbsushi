@@ -40,6 +40,13 @@ Route::get('/addproduct', function () {
     return view('backend/addproduct');
 })->middleware('auth');
 
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('backend/dashboard');
 });
@@ -62,3 +69,5 @@ Route::get('/cart', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->middleware('auth');
+
+
