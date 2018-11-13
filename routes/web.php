@@ -30,6 +30,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/favorites', function () {
+    return view('favorites');
+});
+
 Route::get('/productlist', function () {
     return view('backend/productlist');
 })->middleware('auth');
@@ -60,3 +64,5 @@ Route::get('/cart', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->middleware('auth');
+
+
