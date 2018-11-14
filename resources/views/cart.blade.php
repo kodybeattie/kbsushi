@@ -19,11 +19,12 @@
         <div class="col col-qty align-center">QTY</div>
 
       </div>
+      @foreach(session('cart') as $id => $details)
 
       <div class="layout-inline row row-bg2">
 
         <div class="col col-pro layout-inline">
-          <p>Stuff</p>
+          <p>{{ $details['product_name'] }}</p>
         </div>
 
         <div class="col col-price col-numeric align-center ">
@@ -37,7 +38,7 @@
         </div>
 
       </div>
-
+      @endforeach
 
     <a href="#" class="btn btn-update">Check out</a>
 

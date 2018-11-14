@@ -9,7 +9,7 @@
 
        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800">
 
-
+ <form action="{{route('drinks')}}" method="post">
   <div class="container">
 
     <div class="table">
@@ -51,4 +51,5 @@
 
 </div>
 </div>
+</form>
 @include ('layouts.foot')

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -19,6 +19,13 @@ class ProductController extends Controller
     	//$products = Product::latest()->filter(request([The data to be displayed from products table]))->get();
     }
 
+    public function cart()
+    {
+      return view('sushi');
+    }
+
+
+/*
     public function show($id)
     {
     	$product = Product::find($id);
@@ -38,8 +45,6 @@ class ProductController extends Controller
     public function store()
     {
     	$this->validate(request), [
-
-
     	]);
 		//The required fields ^^
 
@@ -48,4 +53,5 @@ class ProductController extends Controller
 		session()->flash('message', 'New product has been added!');
 		return redirect('/');
     }
+    */
 }
