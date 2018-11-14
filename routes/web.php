@@ -67,7 +67,6 @@ Route::get('/logout', 'LoginController@destroy');
 //Route::get('/cart', 'ProductController@cart')->name('cart');
 //Route::post('/cart', 'ProductController@cart')->name('cart');
 
-
 Route::get('/checkout', function () {
     return view('checkout');
 })->middleware('auth');
