@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 class LoginController extends Controller
 {
   public function __construct()
@@ -16,6 +17,7 @@ class LoginController extends Controller
 
   public function store()
   {
+    Session::flush();
     $this->validate(request(),[
         'email_address' => 'required|email',
         'password' => 'required']);
@@ -33,6 +35,7 @@ class LoginController extends Controller
   public function destroy()
   {
     auth()->logout();
+    Session::flush();
     return redirect()->home();
   }
 }

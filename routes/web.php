@@ -18,7 +18,11 @@ Route::get('/sushi', function () {
     return view('sushi');
 })->name('sushi');
 
-Route::post('/sushi', 'ProductController@cart');
+Route::post('/sushi', 'ProductController@addToCart');
+
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::get('/drinks', function () {
     return view('drinks');
