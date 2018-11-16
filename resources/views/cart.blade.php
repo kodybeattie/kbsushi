@@ -19,25 +19,26 @@
         <div class="col col-qty align-center">QTY</div>
 
       </div>
-      @foreach(session('cart') as $id => $details)
-
+      @foreach(Session::get('cart') as $product_id => $details)
       <div class="layout-inline row row-bg2">
-
+        @foreach($details as $key => $value)
         <div class="col col-pro layout-inline">
-          <p>{{ $details['product_name'] }}</p>
+          <p>{{ dd($details) }}</p>
+          <!--<p>{{ $value["product_name"] }}</p>-->
         </div>
 
         <div class="col col-price col-numeric align-center ">
-          <p>$15.95</p>
+          <p>${{ $value["price"] }}</p>
         </div>
 
         <div class="col col-qty layout-inline">
           <a href="#" class="qty qty-minus">-</a>
-            <input type="numeric" value="0" />
+            <input type="numeric" value="{{ $value["quantity"] }}" />
           <a href="#" class="qty qty-plus">+</a>
         </div>
 
       </div>
+      @endforeach
       @endforeach
 
     <a href="#" class="btn btn-update">Check out</a>

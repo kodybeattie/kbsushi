@@ -18,14 +18,19 @@ Route::get('/sushi', function () {
     return view('sushi');
 })->name('sushi');
 
-Route::post('/sushi', 'ProductController@cart');
+Route::post('/sushi', 'ProductController@addToCart');
+
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::get('/drinks', function () {
     return view('drinks');
 })->name('drinks');
 
-Route::get('/settings','SettingsController@show')->name('settings');
+Route::get('/settings','SettingsController@show')->name('settings')->middleware('auth');
 Route::post('/settings','SettingsController@update');
+
 
 
 Route::get('/contact', function () {
@@ -55,9 +60,11 @@ Route::get('/dashboard', function () {
     return view('backend/dashboard');
 });
 
-Route::get('/orders', function () {
+Route::get('/orders', ['middleware' => 'admin', function () {
     return view('backend/orders');
-})->middleware('auth');
+}]);
+
+
 
 Route::get('/register','RegisterController@create')->name('register');
 Route::post('/register','RegisterController@store');

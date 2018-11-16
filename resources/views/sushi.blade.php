@@ -6,19 +6,7 @@
  use App\Http\Controllers;
  $products = Product::getByCategory(0);
  ?>
- <?php
-    if($_SERVER['REQUEST_METHOD']=='POST')
-    {
-      $quantities = $_POST['quantities'];
-      for ($i=0; $i<count($quantities); $i++)
-      {
-        if ($quantities[$i] != 0)
-        {
-          Product::addToCart($products[$i], $quantities[$i]);
-        }
-      }
-    }
-  ?>
+
  <link rel="stylesheet" href="css/product.css">
 
 

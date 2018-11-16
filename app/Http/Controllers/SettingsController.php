@@ -27,7 +27,10 @@ class SettingsController extends Controller
 
              
     
-   
+//    public function index()
+//    {
+//        return view('settings');
+//    }
 
     public function show() {
         // $users = Users::select('select * from users where id = ?',[]);
@@ -45,8 +48,11 @@ class SettingsController extends Controller
         
         $user = Auth::user();
         $pass = $request->get('password');
-        
+                $this->validate(request(),[
+                
+                'password' => 'required|min:6']);
         if(Hash::check($pass, $user->password)) {
+            
 
            
          $user->first_name = $request->get('first_name');
@@ -64,13 +70,13 @@ class SettingsController extends Controller
          return redirect()->home();
 
         }
-        else
-        {
-            session()->flash('message','hello');
-            return redirect()->home();
-            //Session::flash('flash_message', 'User error!');
-            //return redirect()->home->with('message', 'error|There was an error...');
-        }
+        // else
+        // {
+        //     session()->flash('message','hello');
+        //     return redirect()->route('settings');
+        //     //Session::flash('flash_message', 'User error!');
+        //     //return redirect()->home->with('message', 'error|There was an error...');
+        // }
         //$hashedPassword = Auth::user()->getAuthPassword();
 
         // //$user->first_name = 
