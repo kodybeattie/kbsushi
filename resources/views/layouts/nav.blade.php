@@ -104,7 +104,7 @@
                         {
                         ?>
                             <li><a href="/logout">Logout</a></li>
-                            <li><a href="/favorites">Favorite</a></li>
+                            
                         <?php
                         }
                         ?>
@@ -118,25 +118,28 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                      <!-- Favourite Area -->
-                <div class="favourite-area">
-                    <a href="#"><img src="/images/like.png" alt=""></a>
-                </div>
+
                 <?php
                  if (Auth::user() && $ad == 1)  
                         
                 {
                   ?>
+                    <div class="favourite-area">
+                        <a href="/favorites"><img src="/images/like.png" alt=""></a>
+                    </div>
                 <!-- User Login Info -->
-                <div class="user-login-info">
-                    <a href="/settings"><img src="/images/account.png" alt=""></a>
-                </div>
+                    <div class="user-login-info">
+                        <a href="/settings"><img src="/images/account.png" alt=""></a>
+                    </div>
+                                <!-- Cart Area -->
+                    <div class="cart-area">
+                        <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>
+                    </div>
+
                 <?php
                 }
                 ?>
-                <!-- Cart Area -->
-                <div class="cart-area">
-                    <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>
-                </div>
+
             </div>
 
         </div>

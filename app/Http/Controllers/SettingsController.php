@@ -58,7 +58,11 @@ class SettingsController extends Controller
          $user->first_name = $request->get('first_name');
          $user->last_name = $request->get('last_name');
          $user->email_address = $request->get('email_address');
-         $user->phone_number = $request->get('phone_number');
+         if ($request->get('phone_number') != null)
+         {
+            $user->phone_number = $request->get('phone_number');
+
+         }
          if (!empty($request->input('new_password')))
          {
             $new_password = bcrypt($request->input('new_password'));
@@ -69,6 +73,10 @@ class SettingsController extends Controller
          $user->save();
          return redirect()->home();
 
+        }
+        else
+        {
+            return back();
         }
         // else
         // {

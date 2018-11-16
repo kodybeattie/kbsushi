@@ -45,17 +45,17 @@ Route::get('/favorites', function () {
     return view('favorites');
 });
 
-Route::get('/productlist', function () {
+Route::get('/productlist', ['middleware' => 'admin', function () {
     return view('backend/productlist');
-})->middleware('auth');
+}])->middleware('auth');
 
-Route::get('/addproduct', function () {
+Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
-})->middleware('auth');
+}])->middleware('auth');
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
-});
+}]);
 
 Route::get('/orders', ['middleware' => 'admin', function () {
     return view('backend/orders');

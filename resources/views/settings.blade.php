@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Enter Phone Number">
-						<input class="input100" type="text" name="phone_number" value={{ $user->phoneNumber($user->phone_number) }}>
+						<input class="input100" type="text" name="phone_number" placeholder={{ $user->phoneNumber($user->phone_number) }}>
 						<span class="focus-input100 fa" data-placeholder="&#xf095;"></span>
                     </div>
 

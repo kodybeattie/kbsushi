@@ -20,7 +20,7 @@ class LoginController extends Controller
     Session::flush();
     $this->validate(request(),[
         'email_address' => 'required|email',
-        'password' => 'required']);
+        'password' => 'required|min:6']);
     $user = array(
         'email_address' => request('email_address'),
         'password' => request('password'));
@@ -28,6 +28,11 @@ class LoginController extends Controller
     if (Auth::attempt($user)) {
         //return Redirect::intended('dashboard');
         return redirect()->home();
+
+    }
+    else
+    {
+      return back();
     }
 
   }

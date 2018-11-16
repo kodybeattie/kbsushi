@@ -48,18 +48,17 @@ class User extends Authenticatable
     {
       return $this->hasOne(Setting::class);
     }
-<<<<<<< HEAD
-    public function phoneNumber($data) {
+
+    public static function phoneNumber($data) {
       // add logic to correctly format number here
       // a more robust ways would be to use a regular expression
       return "(".substr($data, 0, 3).")".'-'.substr($data, 3, 3)."-".substr($data,6);
+     }
 
     //  public function checkAdmin($admin){
     //    if $admin == 1
     //  } 
-  }
+ 
 
-=======
->>>>>>> 74e367900f166934bd522ff1d19724cf5c7e5ea2
 
 }
