@@ -75,59 +75,15 @@
 
 
 
-                                </tr>
+                          </tr>
                              
-                                <tr>
-                                    
-                                    <td>Hamachi</td>
-            
-                                    <td>$15.50</td>
-                                    <td>Sushi</td>
-                               
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-
-                                                                <tr>
-                                    
-                                    <td>Maguro Nigiri</td>
-            
-                                    <td>$12.50</td>
-                                    <td>Sushi</td>
-                               
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-
-                                                                <tr>
-                                    
-                                    <td>Salmon Roe</td>
-            
-                                    <td>$15.95</td>
-                                    <td>Sushi</td>
-                               
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    
-                                    <td>Coke</td>
-            
-                                    <td>$2</td>
-                                    <td>Drinks</td>
-                               
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-
+           @foreach($products as $product)
+                <tr class="product">
+                  <td>{{ $product->category }}</td>
+                  <td>{{ $product->product_name }}</td>
+                  <td>{{ $product->product_description }}</td>
+                  <td>{{ $product->price }}</td>
+          @endforeach
 
 
 

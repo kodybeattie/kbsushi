@@ -47,6 +47,9 @@ Route::get('/productlist', function () {
 Route::get('/addproduct', function () {
     return view('backend/addproduct');
 })->middleware('auth');
+ Route::POST('/backend/addproduct','ProductController@addProduct');
+     
+
 
 Route::get('/dashboard', function () {
     return view('backend/dashboard');
