@@ -64,11 +64,34 @@
                         <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                     </div>
                     <!-- Nav Start -->
+
+                    <?php
+                    $ad = 1;
+                        if (Auth::user())
+                        {
+                            $ad = Auth::user()->user_type;
+                          
+                        } 
+                     ?>
                     <div class="classynav">
                         <ul>
+                            <?php if ($ad == 1)
+                            {
+                            ?>
                             <li><a href="/">Home</a>
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>
+                            <?php 
+                            } 
+                            else
+                            {
+                            ?>
+                            <li><a href="/productlist">Products</a>
+                            <li><a href="/addproduct">Add Products</a></li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li><a href="/orders">Orders</a></li>
+
+                            <?php } ?>
                         <?php
                         if (Auth::guest())
                         {
@@ -98,7 +121,8 @@
                     <a href="#"><img src="/images/like.png" alt=""></a>
                 </div>
                 <?php
-                if (!Auth::guest())
+                 if (Auth::user() && $ad == 1)  
+                        
                 {
                   ?>
                 <!-- User Login Info -->

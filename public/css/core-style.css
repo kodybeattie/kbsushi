@@ -1056,10 +1056,13 @@ img {
 
 /* :: 11.0 Footer Area CSS */
 .footer_area {
-  position: relative;
+  position: inherit;
   z-index: 1;
   background-color: #252525;
-  padding: 70px 0 60px; }
+  padding: 70px 0 60px; 
+  bottom: 0;
+  width: 100%
+}
   .footer_area .single_widget_area .footer_menu ul {
     display: -webkit-box;
     display: -ms-flexbox;
