@@ -1,5 +1,5 @@
 <?php
-
+    
 namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
@@ -11,6 +11,35 @@ class ProductController extends Controller
     {
     	$this->middleware('auth')->except(['index', 'show']);
     }
+
+ public function addProduct(Request $request){
+        if($request-> isMethod('post')){
+
+            $this->validate(request(), [
+            'product_name' => 'required',
+            'product_description' => 'required',
+            'category' => 'required',
+             'price' => 'integer|max:100',
+
+            
+        ]);
+
+
+         $data = $request->all();
+         $product = new product;
+         $product = product::all();
+         $product->category = $data['category'];
+         $product->product_name = $data['product_name'];
+         $product->product_description = $data['product_description'];
+         $product->price = $data['price'];
+         $product->save();
+        
+           return back();
+         };
+  
+   }
+
+
 
     public function index(Products $products)
     {

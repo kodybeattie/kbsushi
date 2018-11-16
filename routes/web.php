@@ -51,7 +51,14 @@ Route::get('/productlist', ['middleware' => 'admin', function () {
 
 Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
+<<<<<<< HEAD
 }])->middleware('auth');
+=======
+})->middleware('auth');
+ Route::POST('/backend/addproduct','ProductController@addProduct');
+     
+
+>>>>>>> 32140268a6486c465869b2277580a75af9de547e
 
 Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');

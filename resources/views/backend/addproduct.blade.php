@@ -10,9 +10,6 @@
         <![endif]-->
 
 
-
-
-
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
 
@@ -53,66 +50,59 @@
 
 
 
+  <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addproduct') }}" name="addProduct" id="addProduct" novalidate="novalidate"> {{ csrf_field() }}
+
+      <input type="hidden" name="_token" value="{{csrf_token()}}">
+                 
+
+              <select name="category" id="category" class="control-group">
+                  <placeholder> Select One Value Only</placeholder>
+                  <option value="1">Sushi</option>
+                  <option value="2">Drinks</option>
+              </select>
 
 
-            <div class="container-fluid">
-                      <div id="myTabContent" class="tab-content custom-product-edit">
-                <div class="row">
-              
-                    <div class="col-lg-20 col-md-20 col-sm-20 col-xs-20">
-                                                        <div class="product-tab-list tab-pane fade active in" id="description">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                   
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Product Title">
-                                                    </div>
-
-                                                  <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="price" id="price" placeholder="Product Price">
-                                                    </div>
-
-                                              
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                 
-                                                  <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="product_descriptio" id="product_descriptio" placeholder="Product Description">
-                                                    </div>
-
-
-
-                                            
-                                                    <select name="select" class="form-control pro-edt-select" name="category" id = "category" form-control-primary">
-                                                            <option value="opt1">Catagory</option>
-                                                            <option value="opt2">Drinks</option>
-                                                            <option value="opt3">Sushi</option>
-                                                            <option value="opt4">Soup</option>
-       
-                                                        </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="text-center custom-pro-edt-ds">
-                                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
-                                                        </button>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
+     
+          
+              <div class="control-group">
+                <label class="control-label">Product Name</label>
+                <div class="controls">
+                  <input type="text" name="product_name" id="product_name" required
+                       value="{{ old('product_name') }}">>
                 </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Product Price</label>
+                <div class="controls">
+                  <input type="text" name="price" id="price">
+                </div>
+              </div>
+           
+              <div class="control-group">
+                <label class="control-label">Description</label>
+                <div class="controls">
+                  <textarea name="product_description" id="product_description"></textarea>
+                </div>
+              </div>
+        
+
+             
+              <div class="form-actions">
+                <input type="submit" value="Add Product" class="btn btn-success">
+              </div>
+
+
+     
+               @include('errors')
+
+            </form>
+
+
+
+
+
+
+   
             </div>
         </div>
 
