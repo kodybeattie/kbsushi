@@ -38,14 +38,17 @@ class User extends Authenticatable
       return $this->hasMany(Order::class);
     }
 
-    public function cart()
+    public function favorites()
     {
-      return $this->hasOne(Cart::class);
+      return $this->hasMany(Favorite::class);
     }
+
+
     public function setting()
     {
       return $this->hasOne(Setting::class);
     }
+<<<<<<< HEAD
     public function phoneNumber($data) {
       // add logic to correctly format number here
       // a more robust ways would be to use a regular expression
@@ -56,5 +59,7 @@ class User extends Authenticatable
     //  } 
   }
 
+=======
+>>>>>>> 74e367900f166934bd522ff1d19724cf5c7e5ea2
 
 }

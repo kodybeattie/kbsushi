@@ -16,11 +16,17 @@ Route::get('/','HomeController@index')->name('home');
 
 Route::get('/sushi', function () {
     return view('sushi');
+})->name('sushi');
+
+Route::post('/sushi', 'ProductController@addToCart');
+
+Route::get('/cart', function () {
+    return view('cart');
 });
 
 Route::get('/drinks', function () {
     return view('drinks');
-});
+})->name('drinks');
 
 Route::get('/settings','SettingsController@show')->name('settings')->middleware('auth');
 Route::post('/settings','SettingsController@update');
@@ -33,6 +39,10 @@ Route::get('/contact', function () {
 
 Route::get('/about', function () {
     return view('about');
+});
+
+Route::get('/favorites', function () {
+    return view('favorites');
 });
 
 Route::get('/productlist', function () {
@@ -60,9 +70,9 @@ Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login','LoginController@store');
 Route::get('/logout', 'LoginController@destroy');
 
-Route::get('/cart', function () {
-    return view('cart');
-})->middleware('auth');
+
+//Route::get('/cart', 'ProductController@cart')->name('cart');
+//Route::post('/cart', 'ProductController@cart')->name('cart');
 
 Route::get('/checkout', function () {
     return view('checkout');
