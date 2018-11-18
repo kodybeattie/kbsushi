@@ -62,9 +62,11 @@
                         <div class="product-status-wrap">
                             <h4>Products List</h4>
                             <div class="add-product">
-                                <a href="product-edit.html">Add Product</a>
+                                <a href="/addproduct">Add Product</a>
                             </div>
-                            <table>
+
+                            
+                             <table>
                                 <tr>
                                 
                                     <th>Product Title</th>
@@ -76,20 +78,22 @@
 
 
                           </tr>
-                             
+                 
            @foreach($products as $product)
                 <tr class="product">
-                  <td>{{ $product->category }}</td>
-                  <td>{{ $product->product_name }}</td>
-                  <td>{{ $product->product_description }}</td>
-                  <td>{{ $product->price }}</td>
+                    <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->category }}</td> 
+                     <td>{{ $product->product_description }}</td>
+                  </tr>
           @endforeach
+          
 
 
 
 
 
-                            </table>
+                            </table> 
                             <div class="custom-pagination">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#">Previous</a></li>

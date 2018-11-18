@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 class ProductController extends Controller
 {
 	//Check user for their functions. (Store)
     public function __construct()
     {
-    	$this->middleware('auth')->except(['index', 'show']);
+      //$this->middleware('auth')->except(['index', 'show']);
+      $this->middleware('admin');
+
     }
 
  public function addProduct(Request $request){
@@ -27,13 +30,14 @@ class ProductController extends Controller
 
          $data = $request->all();
          $product = new product;
-         $product = product::all();
+         
+         //$product = product::all();
          $product->category = $data['category'];
          $product->product_name = $data['product_name'];
          $product->product_description = $data['product_description'];
          $product->price = $data['price'];
          $product->save();
-        
+        dd($product->product_name);
            return back();
          };
   
@@ -46,6 +50,16 @@ class ProductController extends Controller
     	$products = $products->all();
 
     	//$products = Product::latest()->filter(request([The data to be displayed from products table]))->get();
+    }
+    
+    public function show()
+    {
+      $products = DB::table('products')->get();
+
+      //dd($products->product_name);
+      //this is just another way to return the array
+    	//return view('backend/productlist',['products'=>$products]);
+    	return view('backend/productlist', compact('products'));
     }
 
     public function cart()
@@ -106,13 +120,8 @@ class ProductController extends Controller
       Session::push('cart', $cart);
       //return redirect()->route('cart');
     }
-/*
-    public function show($id)
-    {
-    	$product = Product::find($id);
-    	return view('product.show', compact('product'));
-    }
 
+/*
 
    public function addProduct(Request $request){
    return view('backend/addproduct');
