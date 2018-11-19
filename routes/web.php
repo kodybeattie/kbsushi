@@ -26,6 +26,13 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
+
+Route::get('/edit', function () {
+    return view('backend/edit{product}');
+});
+
+
+
 Route::get('/drinks', function () {
     return view('drinks');
 })->name('drinks');

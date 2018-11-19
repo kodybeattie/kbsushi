@@ -50,7 +50,7 @@ class ProductController extends Controller
 
    public function editshow($product_id) {
       $products = DB::select('select * from products where product_id = ?',[$product_id]);
-      return view('backend/update',['products'=>$products]);
+      return view('backend/edit',['products'=>$products]);
    }
  
     public function edit(Request $request,$product_id) {

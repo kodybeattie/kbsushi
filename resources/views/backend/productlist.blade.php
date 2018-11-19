@@ -82,8 +82,10 @@
            @foreach($products as $product)
                 <tr class="product">
                 <td>{{ $product->product_name }}</td>
+                
                 <td>${{ $product->price }}</td>
                 <td>{{ $product->category }}</td> 
+               
                 <td>{{ $product->product_description }}</td>
                 <td><a href = 'delete/{{ $product->product_id }}'><button type="button" class="btn btn-danger">Delete</button></a></td>
 

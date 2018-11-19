@@ -1,11 +1,8 @@
-@include('backend.backhead')
-<html>
-   
-   <head>
-      <title>Student Management | Edit</title>
-   </head>
-   
-   <body>
+<!doctype html>
+<html class="no-js" lang="en">
+
+  @include('backend.backhead') 
+      <body>
       <form action = "/edit/<?php echo $products[0]->product_id; ?>" method = "post">
          <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
       
@@ -53,4 +50,5 @@
       </form>
    
    </body>
-</html>
+   
+
