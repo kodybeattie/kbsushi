@@ -49,6 +49,11 @@ Route::get('/favorites', function () {
 //     return view('backend/productlist');
 // });
 Route::get('/productlist', 'ProductController@show');
+Route::get('delete/{product_id}','ProductController@destroy');
+Route::get('edit/{id}','ProductController@editshow');
+Route::post('edit/{id}','ProductController@edit');
+
+
 
 Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');

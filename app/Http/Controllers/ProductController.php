@@ -42,6 +42,34 @@ class ProductController extends Controller
          };
   
    }
+   public function destroy($product_id) {
+      DB::delete('delete from products where product_id = ?',[$product_id]);
+      
+      return back();
+   }
+
+   public function editshow($product_id) {
+      $products = DB::select('select * from products where product_id = ?',[$product_id]);
+      return view('backend/update',['products'=>$products]);
+   }
+ 
+    public function edit(Request $request,$product_id) {
+      $product_name = $request->input('product_name');
+      DB::update('update products set product_name = ? where product_id = ?',[$product_name,$product_id]);
+
+
+      $price= $request->input('price');
+      DB::update('update products set price = ? where product_id = ?',[$price,$product_id]);
+    
+      $category= $request->input('category');
+      DB::update('update products set category = ? where product_id = ?',[$category,$product_id]);
+
+      $product_description = $request->input('product_description');
+      DB::update('update products set product_description = ? where product_id = ?',[$product_description,$product_id]);
+
+
+      return back();
+   }
 
 
 
