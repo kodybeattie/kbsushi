@@ -11,9 +11,10 @@ class ProductController extends Controller
     public function __construct()
     {
       //$this->middleware('auth')->except(['index', 'show']);
-      $this->middleware('admin');
-
+      //$this->middleware('admin');
+      $this->middleware('admin')->except(['addSushiToCart', 'addDrinkToCart']);
     }
+
 
  public function addProduct(Request $request){
         if($request-> isMethod('post')){
