@@ -24,7 +24,7 @@ class OrderController extends Controller
           ->get();
 
         dd($users);
-        
+
         return view('backend/orders');
     }
 
@@ -38,11 +38,9 @@ class OrderController extends Controller
           'datetime_completed' => null]);
       foreach ($products as $product)
       {
-        $orderProduct = Order_product::create([
-                'order_id' => $order->id(),
-                'product_id' => $products["product_id"],
-                'quantity' => $product['quantity']]
-            );
+        DB::table('order_products')->insert('order_id' => $order->id(),
+                                            'product_id' => $products["product_id"],
+                                            'quantity' => $product['quantity']));
       }
       redirect()->home();
     }

@@ -15,7 +15,7 @@
 
 
         <div class="header-advance-area">
-    
+
 
 
 
@@ -35,11 +35,11 @@
                                             </div>
                                             <div class="breadcomb-ctn">
                                                 <h2>Add A Product</h2>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
-                           
+
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
   <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addproduct') }}" name="addProduct" id="addProduct" novalidate="novalidate"> {{ csrf_field() }}
 
       <input type="hidden" name="_token" value="{{csrf_token()}}">
-                 
+
 
               <select name="category" id="category" class="control-group">
                   <placeholder> Select One Value Only</placeholder>
@@ -62,8 +62,8 @@
               </select>
 
 
-     
-          
+
+
               <div class="control-group">
                 <label class="control-label">Product Name</label>
                 <div class="controls">
@@ -77,22 +77,22 @@
                   <input type="text" name="price" id="price">
                 </div>
               </div>
-           
+
               <div class="control-group">
                 <label class="control-label">Description</label>
                 <div class="controls">
                   <textarea name="product_description" id="product_description"></textarea>
                 </div>
               </div>
-        
 
-             
+
+
               <div class="form-actions">
                 <input type="submit" value="Add Product" class="btn btn-success">
               </div>
 
 
-     
+
                @include('errors')
 
             </form>
@@ -102,7 +102,7 @@
 
 
 
-   
+
             </div>
         </div>
 

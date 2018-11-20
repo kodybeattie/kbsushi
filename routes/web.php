@@ -26,13 +26,6 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
-
-Route::get('/edit', function () {
-    return view('backend/edit{product}');
-});
-
-
-
 Route::get('/drinks', function () {
     return view('drinks');
 })->name('drinks');
@@ -42,8 +35,6 @@ Route::post('/drinks', 'ProductController@addDrinkToCart');
 Route::get('/settings','SettingsController@show')->name('settings')->middleware('auth');
 
 Route::post('/settings','SettingsController@update');
-
-
 
 Route::get('/contact', function () {
     return view('contact');
@@ -62,26 +53,21 @@ Route::get('/favorites', function () {
 // });
 Route::get('/productlist', 'ProductController@show');
 Route::get('delete/{product_id}','ProductController@destroy');
-Route::get('edit/{id}','ProductController@editshow');
-Route::post('edit/{id}','ProductController@edit');
 
-
+Route::get('edit/{product}','ProductController@editshow');
+Route::post('/backend/edit','ProductController@edit');
 
 Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
 }]);
 
- Route::post('/backend/addproduct','ProductController@addProduct');
-
-
+Route::post('/backend/addproduct','ProductController@addProduct');
 
 Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
 }]);
 
 Route::get('/orders','OrderController@index');
-
-
 
 Route::get('/register','RegisterController@create')->name('register');
 Route::post('/register','RegisterController@store');
