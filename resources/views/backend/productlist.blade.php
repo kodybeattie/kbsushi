@@ -29,18 +29,18 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="breadcome-list">
+                            <div class="breadcome-list">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-											<div class="breadcomb-icon">
-												<i class="icon nalika-home"></i>
-											</div>
-											<div class="breadcomb-ctn">
-												<h2>Product List</h2>
-												<p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
-											</div>
-										</div> 
+                                            <div class="breadcomb-icon">
+                                                <i class="icon nalika-home"></i>
+                                            </div>
+                                            <div class="breadcomb-ctn">
+                                                <h2>Product List</h2>
+                                                <p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
+                                            </div>
+                                        </div> 
                                     </div>
 
                                 </div>
@@ -64,44 +64,46 @@
                             <div class="add-product">
                                 <a href="/addproduct">Add Product</a>
                             </div>
-
-                            
-                             <table>
+                            <table> 
                                 <tr>
                                 
                                     <th>Product Title</th>
                                     
                                     <th>Price</th>
                                     <th>Catagory</th>
-                                     <th>Delete/Edit</th>
+                                    
+                                     <th>Product Description</th>
+                                      <th>Delete/Edit</th>
 
 
 
                           </tr>
-                 
+                             
            @foreach($products as $product)
                 <tr class="product">
-                    <td>{{ $product->product_name }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td>{{ $product->category }}</td> 
-                     <td>{{ $product->product_description }}</td>
-                  </tr>
+                <td>{{ $product->product_name }}</td>
+                
+                <td>${{ $product->price }}</td>
+                <td>{{ $product->category }}</td> 
+               
+                <td>{{ $product->product_description }}</td>
+                <td><a href = 'delete/{{ $product->product_id }}'><button type="button" class="btn btn-danger">Delete</button></a></td>
+
+                 <td><a href = 'edit/{{ $product->product_id }}'>Edit</a></td>
+                
           @endforeach
-          
 
 
 
-
-
-                            </table> 
+                            </table>
                             <div class="custom-pagination">
-								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a></li>
-								</ul>
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>

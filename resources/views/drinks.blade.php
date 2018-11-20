@@ -1,6 +1,8 @@
 
  @include ('layouts.nav')
  <?php
+ use App\Product;
+ use App\Http\Controllers;
  $products = App\Product::getByCategory(1);
  ?>
 
@@ -10,6 +12,7 @@
        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800">
 
  <form action="{{route('drinks')}}" method="post">
+   {{ csrf_field() }}
   <div class="container">
 
     <div class="table">
@@ -38,7 +41,7 @@
           <div>
             <button type="button" class="qty qty-minus" id="decrease" onclick="decreaseValue({{ $drink['product_id'] }})">-</button>
           </div>
-            <input type="numeric" id="{{ $drink['product_id'] }}" value="0" readonly />
+          <input type="numeric" name="quantities[]" id="{{ $drink['product_id'] }}" value="0" readonly />
           <div>
             <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $drink['product_id'] }})">+</button>
           </div>
@@ -47,7 +50,7 @@
       </div>
     @endforeach
 
-    <a href="#" class="btn btn-update">Update cart</a>
+    <input type="submit" class="btn btn-update" value="Update Cart">
 
 </div>
 </div>
