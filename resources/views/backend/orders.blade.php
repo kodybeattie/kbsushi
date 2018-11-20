@@ -33,8 +33,8 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-											<div class="breadcomb-icon">
-												<i class="icon nalika-home"></i>
+											<div >
+                                            <i class="fas fa-tasks fa-3x fa-border" style="background:MistyRose"></i>
 											</div>
 											<div class="breadcomb-ctn">
 												<h2>Orders</h2>
@@ -66,9 +66,13 @@
                                                 </tr>
 
                                                 <tr>
-                                                 
+                        
+                                                
+                                                  
+                                                
+
                                                     <td>
-                                                        <h3>Jane Doe</h3>
+                                                        <h3>fafaf</h3>
                                                         <ol><li> Maguro Nigiri x 3
                                                          </li>
                                                          <li> Coke x 2

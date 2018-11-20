@@ -53,6 +53,8 @@
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/responsive.css">
@@ -74,7 +76,6 @@
                     <ul class="metismenu" id="menu1">
                         <li class="active">
                             <a class="has-arrow" href="/">
-                                   <i class="icon nalika-home icon-wrap"></i>
                                    <span class="mini-click-non">Kiyoshi Bai Sushi</span>
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">

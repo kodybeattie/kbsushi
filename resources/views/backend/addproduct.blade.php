@@ -30,8 +30,8 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-                                            <div class="breadcomb-icon">
-                                                <i class="icon nalika-home"></i>
+                                            <div >
+                                            <i class="fas fa-plus fa-2x fa-border" style="background:MistyRose"></i>
                                             </div>
                                             <div class="breadcomb-ctn">
                                                 <h2>Add A Product</h2>

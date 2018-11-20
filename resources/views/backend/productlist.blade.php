@@ -33,12 +33,11 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-                                            <div class="breadcomb-icon">
-                                                <i class="icon nalika-home"></i>
+                                            <div>
+                                            <i class="fas fa-list-alt fa-3x fa-border" style="background:MistyRose"></i>
                                             </div>
                                             <div class="breadcomb-ctn">
                                                 <h2>Product List</h2>
-                                                <p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
                                             </div>
                                         </div>
                                     </div>

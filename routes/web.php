@@ -67,9 +67,7 @@ Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
 }]);
 
-Route::get('/orders', ['middleware' => 'admin', function () {
-    return view('backend/orders');
-}]);
+Route::get('/orders','OrderController@index');
 
 Route::get('/register','RegisterController@create')->name('register');
 Route::post('/register','RegisterController@store');
