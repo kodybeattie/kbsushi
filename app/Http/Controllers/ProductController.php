@@ -1,5 +1,5 @@
 <?php
-    
+
 namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
@@ -11,48 +11,51 @@ class ProductController extends Controller
     public function __construct()
     {
       //$this->middleware('auth')->except(['index', 'show']);
-      $this->middleware('admin');
-
+      //$this->middleware('admin');
+      $this->middleware('admin')->except(['addSushiToCart', 'addDrinkToCart']);
     }
 
- public function addProduct(Request $request){
+    public function cart()
+    {
+      return view('sushi');
+    }
+
+
+    public function addProduct(Request $request){
         if($request-> isMethod('post')){
 
             $this->validate(request(), [
             'product_name' => 'required',
             'product_description' => 'required',
             'category' => 'required',
-             'price' => 'integer|max:100',
-
-            
-        ]);
+             'price' => 'integer|max:100',]);
 
 
-         $data = $request->all();
-         $product = new product;
-         
-         //$product = product::all();
-         $product->category = $data['category'];
-         $product->product_name = $data['product_name'];
-         $product->product_description = $data['product_description'];
-         $product->price = $data['price'];
-         $product->save();
-        dd($product->product_name);
-           return back();
+           $data = $request->all();
+           $product = new product;
+
+           //$product = product::all();
+           $product->category = $data['category'];
+           $product->product_name = $data['product_name'];
+           $product->product_description = $data['product_description'];
+           $product->price = $data['price'];
+           $product->save();
+          dd($product->product_name);
+             return back();
          };
-  
+
    }
    public function destroy($product_id) {
       DB::delete('delete from products where product_id = ?',[$product_id]);
-      
+
       return back();
    }
 
    public function editshow($product_id) {
       $products = DB::select('select * from products where product_id = ?',[$product_id]);
-      return view('backend/edit',['products'=>$products]);
+      return view('backend.edit')->with('product',$products[0]);
    }
- 
+
     public function edit(Request $request,$product_id) {
       $product_name = $request->input('product_name');
       DB::update('update products set product_name = ? where product_id = ?',[$product_name,$product_id]);
@@ -60,7 +63,7 @@ class ProductController extends Controller
 
       $price= $request->input('price');
       DB::update('update products set price = ? where product_id = ?',[$price,$product_id]);
-    
+
       $category= $request->input('category');
       DB::update('update products set category = ? where product_id = ?',[$category,$product_id]);
 
@@ -79,7 +82,7 @@ class ProductController extends Controller
 
     	//$products = Product::latest()->filter(request([The data to be displayed from products table]))->get();
     }
-    
+
     public function show()
     {
       $products = DB::table('products')->get();
@@ -88,11 +91,6 @@ class ProductController extends Controller
       //this is just another way to return the array
     	//return view('backend/productlist',['products'=>$products]);
     	return view('backend/productlist', compact('products'));
-    }
-
-    public function cart()
-    {
-      return view('sushi');
     }
 
     public function addSushiToCart(Request $request)
@@ -177,30 +175,8 @@ class ProductController extends Controller
       }
       Session::forget('cart');
       Session::push('cart', $cart);
-      return redirect()->route('cart');
+      return redirect('/cart');
     }
 
-/*
 
-   public function addProduct(Request $request){
-   return view('backend/addproduct');
-   }
-
-    public function create()
-    {
-    	return view('products.create');
-    }
-
-    public function store()
-    {
-    	$this->validate(request), [
-    	]);
-		//The required fields ^^
-
-		auth()->user()->publish(//The new Poduct to add into the database with fields
-		);
-		session()->flash('message', 'New product has been added!');
-		return redirect('/');
-    }
-    */
 }

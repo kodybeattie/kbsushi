@@ -18,7 +18,7 @@
 
 
         <div class="header-advance-area">
-    
+
 
 
 
@@ -40,7 +40,7 @@
                                                 <h2>Product List</h2>
                                                 <p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
                                             </div>
-                                        </div> 
+                                        </div>
                                     </div>
 
                                 </div>
@@ -64,33 +64,33 @@
                             <div class="add-product">
                                 <a href="/addproduct">Add Product</a>
                             </div>
-                            <table> 
+                            <table>
                                 <tr>
-                                
+
                                     <th>Product Title</th>
-                                    
+
                                     <th>Price</th>
                                     <th>Catagory</th>
-                                    
+
                                      <th>Product Description</th>
                                       <th>Delete/Edit</th>
 
 
 
                           </tr>
-                             
+
            @foreach($products as $product)
                 <tr class="product">
                 <td>{{ $product->product_name }}</td>
-                
+
                 <td>${{ $product->price }}</td>
-                <td>{{ $product->category }}</td> 
-               
+                <td>{{ $product->category }}</td>
+
                 <td>{{ $product->product_description }}</td>
                 <td><a href = 'delete/{{ $product->product_id }}'><button type="button" class="btn btn-danger">Delete</button></a></td>
 
-                 <td><a href = 'edit/{{ $product->product_id }}'>Edit</a></td>
-                
+                 <td><a href='edit/{{ $product->product_id }}'>Edit</a></td>
+
           @endforeach
 
 
