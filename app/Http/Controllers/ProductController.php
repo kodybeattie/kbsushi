@@ -37,7 +37,6 @@ class ProductController extends Controller
          $product->product_description = $data['product_description'];
          $product->price = $data['price'];
          $product->save();
-        dd($product->product_name);
            return back();
          };
   

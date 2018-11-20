@@ -48,7 +48,7 @@ Route::get('/favorites', function () {
 // Route::get('/productlist', function () {
 //     return view('backend/productlist');
 // });
-Route::get('/productlist', 'ProductController@show');
+Route::get('/productlist', 'ProductController@show'); 
 
 Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
@@ -62,9 +62,7 @@ Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
 }]);
 
-Route::get('/orders', ['middleware' => 'admin', function () {
-    return view('backend/orders');
-}]);
+Route::get('/orders','OrderController@index');
 
 
 
