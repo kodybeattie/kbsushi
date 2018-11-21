@@ -57,8 +57,8 @@
 
               <select name="category" id="category" class="control-group">
                   <placeholder> Select One Value Only</placeholder>
-                  <option value="1">Sushi</option>
-                  <option value="2">Drinks</option>
+                  <option value="0">Sushi</option>
+                  <option value="1">Drinks</option>
               </select>
 
 
