@@ -24,6 +24,8 @@ $total = 0;
      <?php
        $products = Session::get('cart')[0];
      ?>
+   <form action="/checkout" method="post">
+       {{ csrf_field() }}
        @foreach($products as $product)
        <div class="layout-inline row row-bg2">
          <div class="col col-pro layout-inline">
@@ -60,11 +62,10 @@ $total = 0;
        </div>
 
      <div class="layout-inline row row-bg2">
-       <div class="col col-qty layout-inline">
-         <a type="submit" href="{{route('home')}}" class="btn btn-update">Submit Order</a>
-       </div>
-     </div>
+       <input type="submit" class="btn btn-update" value="Submit Order">
 
+     </div>
+</form>
 </div>
 </div>
 @include ('layouts.foot')

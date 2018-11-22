@@ -6,15 +6,10 @@ use Illuminate\Http\Request;
 use App\Order;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Session;
+
 class OrderController extends Controller
 {
-    public function __construct()
-    {
-      //$this->middleware('auth')->except(['index', 'show']);
-      $this->middleware('admin');
-
-    }
-
     public function index()
     {
         $users = DB::table('orders')
@@ -36,12 +31,13 @@ class OrderController extends Controller
           'user_id' => Auth::id(),
           'datetime_ordered' => date('Y-m-d H:i:s'),
           'datetime_completed' => null]);
-      foreach ($products as $product)
+
+      foreach ($products as $product_id => $info)
       {
-        DB::table('order_products')->insert('order_id' => $order->id(),
-                                            'product_id' => $products["product_id"],
-                                            'quantity' => $product['quantity']));
+        DB::table('order_products')->insert(['order_id' => $order->getKey(),
+                                            'product_id' => $product_id,
+                                            'quantity' => $info['quantity']]);
       }
-      redirect()->home();
+      return redirect()->home();
     }
 }
