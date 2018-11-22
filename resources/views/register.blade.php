@@ -13,7 +13,7 @@
                 {{ csrf_field() }}
 
                 <span class="login100-form-logo">
-                    <i class="far " style="color:#5a3791;">&#xf2bd;</i>
+                    <i class="far fa-spin " style="color:#5a3791;">&#xf2bd;</i>
                 </span>
 
                 <span class="login100-form-title p-b-34 p-t-27">

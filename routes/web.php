@@ -63,6 +63,17 @@ Route::get('/addproduct', ['middleware' => 'admin', function () {
 
 Route::post('/backend/addproduct','ProductController@addProduct');
 
+Route::get('/viewvendors','VendorsController@index');
+
+Route::get('/addvendors', ['middleware' => 'admin', function () {
+    return view('backend/addvendors');
+}]);
+
+Route::delete('/viewvendors/{vendor_id}','VendorsController@destroy');
+
+Route::post('/backend/addvendors','VendorsController@addVendor');
+
+
 Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
 }]);

@@ -25,7 +25,7 @@ class ProductController extends Controller
         if($request-> isMethod('post')){
 
             $this->validate(request(), [
-            'product_name' => 'required',
+            'product_name' => 'required|unique:products',
             'product_description' => 'required',
             'category' => 'required',
              'price' => 'integer|max:100',]);
@@ -40,7 +40,7 @@ class ProductController extends Controller
            $product->product_description = $data['product_description'];
            $product->price = $data['price'];
            $product->save();
-          dd($product->product_name);
+         // dd($product->product_name);
              return back();
          };
 

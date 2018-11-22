@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
+<?php
+use \App\Vendor;
+?>
 @include('backend.backhead')
 
     <!--[if lt IE 8]>
@@ -26,7 +28,7 @@
                                             <i class="fas fa-list-alt fa-3x fa-border" style="background:MistyRose"></i>
                                             </div>
                                             <div class="breadcomb-ctn">
-                                                <h2>Product List</h2>
+                                                <h2>Vendor List</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -48,36 +50,39 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Products List</h4>
+                            <h4>Vendors</h4>
                             <div class="add-product">
-                                <a href="/addproduct">Add Product</a>
+                                <a href="/addvendors">Add Vendor</a>
                             </div>
                             <table>
                                 <tr>
 
-                                    <th>Product Title</th>
+                                    <th>Vendor Name</th>
 
-                                    <th>Price</th>
-                                    <th>Catagory</th>
+                                    <th>Phone Number</th>
 
-                                     <th>Product Description</th>
                                       <th>Delete/Edit</th>
 
 
 
                           </tr>
 
-           @foreach($products as $product)
+           @foreach($vendors as $vendor)
                 <tr class="product">
-                <td>{{ $product->product_name }}</td>
+                <td>{{ $vendor->vendor_id }}</td>
+                <td>{{ Vendor::phoneNumber($vendor->phone_number) }}</td>
+               
+                <td>
+                    <form action="/viewvendors/{{ $vendor->vendor_id }}" method="post">
+                    {{ method_field('delete') }}
+                    {{ csrf_field() }}
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+                </td>
+             
+      
+          
 
-                <td>${{ $product->price }}</td>
-                <td>{{ $product->category }}</td>
-
-                <td>{{ $product->product_description }}</td>
-                <td><a href = 'delete/{{ $product->product_id }}'><button type="button" class="btn btn-danger ">Delete</button></a></td>
-
-                 <td><a href='edit/{{ $product->product_id }}'>Edit</a></td>
 
           @endforeach
 
@@ -99,6 +104,4 @@
             </div>
         </div>
 
-
 @include ('backend.backfooter')
-

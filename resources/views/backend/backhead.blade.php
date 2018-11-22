@@ -13,6 +13,7 @@
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/font-awesome.min.css">
@@ -80,10 +81,13 @@
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="/dashboard"><span class="mini-sub-pro">Dashboard</span></a></li>
-
-                                <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
                                 <li><a title="Product Detail" href="/addproduct"><span class="mini-sub-pro">Add a Product</span></a></li>
+                                <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
+                                
+                                <li><a title="Add Vendors" href="/addvendors"><span class="mini-sub-pro">Add Vendors</span></a></li>
+                                <li><a title="View Vendors" href="/viewvendors"><span class="mini-sub-pro">View Vendors</span></a></li>
                                 <li><a title="Product Cart" href="/orders"><span class="mini-sub-pro">Orders</span></a></li>
+                                
 
                             </ul>
                         </li>

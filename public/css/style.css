@@ -58,6 +58,24 @@
         text-align: center;
 
 }
+.custom-error {
+    width: 410px;
+    top: 20px;
+    position: relative;
+}
+.ch-btn {
+    margin-top: 15px;
+    position: relative;
+}
+
+.cust-con {
+    margin-left: 25px;
+    
+    position: relative;
+}
+.cust-con label {
+    color: #f1f1f1;
+}
 
 @media (max-width: 768px) { 
     #contact iframe {

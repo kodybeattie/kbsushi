@@ -48,6 +48,8 @@ class User extends Authenticatable
     {
       return $this->hasOne(Setting::class);
     }
+    
+    
 
     public static function phoneNumber($data) {
       // add logic to correctly format number here
