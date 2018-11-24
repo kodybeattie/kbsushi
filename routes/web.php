@@ -13,6 +13,9 @@
 
 /* LESSON 1*/
 Route::get('/','HomeController@index')->name('home');
+Route::get('/checks',function() {
+    return view('checks');
+});
 
 Route::get('/sushi', function () {
     return view('sushi');
