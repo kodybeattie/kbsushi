@@ -1,4 +1,8 @@
-<?php use Illuminate\Support\Facades\Auth; ?>
+<?php use Illuminate\Support\Facades\Auth; 
+     use Illuminate\Support\Facades\DB;
+    use App\Favourite;
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +43,35 @@
         value < 1 ? value = 1 : '';
         value--;
         document.getElementById(strId).value = value;
+      }     
+
+      function addToFavourites(id, productId){
+        var result = Favourite::where('user_id', '=', id)
+            ->where('product_id', '=', productId)
+            ->get();
+            dd(id);
+        if(result == null)
+        {
+            //if not then add these to favourites.
+            //Maybe add flash message for each outcome
+            DB::table('favourites')->insert([
+                'user_id' => id,
+                'product_id' => productId
+            ]);
+        }
+        else
+        {
+            //If so then remove them
+            DB::table('favourites')->where('user_id', '=', id)
+            ->where('product_id ', '=', productId)
+            ->delete();
+        }
+       
+
       }
     </script>
 
+   
 
 </head>
 
@@ -81,7 +111,7 @@
                         {
                         ?>
                             <li><a href="/logout">Logout</a></li>
-                            <li><a href="/favorites">Favorite</a></li>
+                            <li><a href="/favourites">Favourite</a></li>
                         <?php
                         }
                         ?>

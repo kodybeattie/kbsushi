@@ -77,6 +77,7 @@ class ProductController extends Controller
       Session::push('cart', $cart);
       //return redirect()->route('cart');
     }
+
 /*
     public function show($id)
     {

@@ -40,8 +40,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/favorites', function () {
-    return view('favorites');
+Route::get('/favourites', function () {
+    return view('favourites');
 });
 
 Route::get('/productlist', function () {
