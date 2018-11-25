@@ -289,6 +289,9 @@ ul.dtl-social li a{
     background: #1b2a47;
     padding: 20px 0px;
     text-align: center;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
 }
 .footer-copy-right p {
     margin: 0px;

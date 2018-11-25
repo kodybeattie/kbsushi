@@ -1,4 +1,3 @@
-
  @include ('layouts.nav')
 
  <link rel="stylesheet" href="css/product.css">
@@ -19,29 +18,33 @@
         <div class="col col-qty align-center">QTY</div>
 
       </div>
-      @foreach(Session::get('cart') as $product_id => $details)
-      <div class="layout-inline row row-bg2">
-        @foreach($details as $key => $value)
-        <div class="col col-pro layout-inline">
-          <p>{{ dd($details) }}</p>
-          <!--<p>{{ $value["product_name"] }}</p>-->
-        </div>
+      <?php
+        $products = Session::get('cart')[0];
+      ?>
+        @foreach($products as $product)
+        <div class="layout-inline row row-bg2">
+          <div class="col col-pro layout-inline">
+            <p> {{ $product['product_name'] }} </p>
+          </div>
 
-        <div class="col col-price col-numeric align-center ">
-          <p>${{ $value["price"] }}</p>
+            <div class="col col-price col-numeric align-center ">
+              <p> ${{ $product['price'] }} </p>
+            </div>
+
+            <div class="col col-qty layout-inline">
+              <input type="numeric" value="{{ $product['quantity'] }}" readonly/>
+            </div>
+          </div>
+        @endforeach
+      <div class="layout-inline row row-bg2">
+        <div class="col col-pro layout-inline">
+          <a href="{{route('home')}}" class="btn btn-update">Continue Shopping</a>
         </div>
 
         <div class="col col-qty layout-inline">
-          <a href="#" class="qty qty-minus">-</a>
-            <input type="numeric" value="{{ $value["quantity"] }}" />
-          <a href="#" class="qty qty-plus">+</a>
+          <a type="submit" href="{{route('checkout')}}" class="btn btn-update">Check out</a>
         </div>
-
       </div>
-      @endforeach
-      @endforeach
-
-    <a href="#" class="btn btn-update">Check out</a>
 
 </div>
 </div>

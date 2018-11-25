@@ -94,11 +94,34 @@
                         <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                     </div>
                     <!-- Nav Start -->
+
+                    <?php
+                    $ad = 1;
+                        if (Auth::user())
+                        {
+                            $ad = Auth::user()->user_type;
+                          
+                        } 
+                     ?>
                     <div class="classynav">
                         <ul>
+                            <?php if ($ad == 1)
+                            {
+                            ?>
                             <li><a href="/">Home</a>
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>
+                            <?php 
+                            } 
+                            else
+                            {
+                            ?>
+                            <li><a href="/productlist">Products</a>
+                            <li><a href="/addproduct">Add Products</a></li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li><a href="/orders">Orders</a></li>
+
+                            <?php } ?>
                         <?php
                         if (Auth::guest())
                         {
@@ -111,7 +134,9 @@
                         {
                         ?>
                             <li><a href="/logout">Logout</a></li>
+
                             <li><a href="/favourites">Favourite</a></li>
+
                         <?php
                         }
                         ?>
@@ -125,24 +150,28 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                      <!-- Favourite Area -->
-                <div class="favourite-area">
-                    <a href="#"><img src="/images/like.png" alt=""></a>
-                </div>
+
                 <?php
-                if (!Auth::guest())
+                 if (Auth::user() && $ad == 1)  
+                        
                 {
                   ?>
+                    <div class="favourite-area">
+                        <a href="/favorites"><img src="/images/like.png" alt=""></a>
+                    </div>
                 <!-- User Login Info -->
-                <div class="user-login-info">
-                    <a href="/settings"><img src="/images/account.png" alt=""></a>
-                </div>
+                    <div class="user-login-info">
+                        <a href="/settings"><img src="/images/account.png" alt=""></a>
+                    </div>
+                                <!-- Cart Area -->
+                    <div class="cart-area">
+                        <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>
+                    </div>
+
                 <?php
                 }
                 ?>
-                <!-- Cart Area -->
-                <div class="cart-area">
-                    <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>
-                </div>
+
             </div>
 
         </div>

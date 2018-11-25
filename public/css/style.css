@@ -42,6 +42,41 @@
     background-image: url("../images/maki.jpg");
     }
 
+.footer_area_a {
+        position: inherit;
+        bottom: 0;
+        height: 350px;
+        width: 100%;
+        z-index: 1;
+        background-color: #252525;
+        padding: 50px;
+    }
+.custom-alert {
+        border-radius: 25em;
+        padding-left: 25px;
+        margin-top:15px;
+        text-align: center;
+
+}
+.custom-error {
+    width: 410px;
+    top: 20px;
+    position: relative;
+}
+.ch-btn {
+    margin-top: 15px;
+    position: relative;
+}
+
+.cust-con {
+    margin-left: 25px;
+    
+    position: relative;
+}
+.cust-con label {
+    color: #f1f1f1;
+}
+
 @media (max-width: 768px) { 
     #contact iframe {
         margin-bottom: 15px;

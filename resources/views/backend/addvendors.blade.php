@@ -3,23 +3,11 @@
 
 @include('backend.backhead')
 
-
-
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
 
 
         <div class="header-advance-area">
-
-
-
-
-
 
             <!-- Mobile Menu end-->
  <div class="breadcome-area">
@@ -50,48 +38,30 @@
 
 
 
-  <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addproduct') }}" name="addProduct" id="addProduct" novalidate="novalidate"> {{ csrf_field() }}
+  <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addvendors') }}" name="addVendors" id="addVendors" novalidate="novalidate"> {{ csrf_field() }}
 
       <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-            <div class="cust-con">
-              <select name="category" id="category" class="control-group">
-                  <placeholder> Select One Value Only</placeholder>
-                  <option value="0">Sushi</option>
-                  <option value="1">Drinks</option>
-              </select>
 
 
-           
 
-
-           
-
-              <div class="control-group ">
-                <label class="control-label">Product Name</label>
+              <div class="control-group cust-con">
+                <label class="control-label ">Vendor Name</label>
                 <div class="controls">
-                  <input type="text" name="product_name" id="product_name" required
-                       value="{{ old('product_name') }}">>
+                  <input type="text" name="vendor_name" id="vendor_name" required
+                       
                 </div>
               </div>
               <div class="control-group">
-                <label class="control-label">Product Price</label>
+                <label class="control-label">Vendor Phone Number</label>
                 <div class="controls">
-                  <input type="text" name="price" id="price">
-                </div>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Description</label>
-                <div class="controls">
-                  <textarea name="product_description" id="product_description"></textarea>
+                  <input type="text" name="vendor_phone" id="vendor_phone">
                 </div>
               </div>
 
 
-
-              <div class="form-actions">
-                <input type="submit" value="Add Product" class="btn btn-success">
+              <div class="form-actions ch-btn">
+                <input type="submit" value="Add Vendor" class="btn btn-success">
               </div>
 
 
@@ -100,22 +70,7 @@
 
             </form>
 
+            </div>
         </div>
-    </div>
 
 @include ('backend.backfooter')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -13,24 +13,31 @@
 
 /* LESSON 1*/
 Route::get('/','HomeController@index')->name('home');
+Route::get('/checks',function() {
+    return view('checks');
+});
 
 Route::get('/sushi', function () {
     return view('sushi');
 })->name('sushi');
 
-Route::post('/sushi', 'ProductController@addToCart');
+Route::post('/sushi', 'ProductController@addSushiToCart');
+
+Route::post('/checkout', 'OrderController@create');
 
 Route::get('/cart', function () {
     return view('cart');
-});
+})->name('cart');
 
 Route::get('/drinks', function () {
     return view('drinks');
 })->name('drinks');
 
-Route::get('/settings','SettingsController@show')->name('settings');
-Route::post('/settings','SettingsController@update');
+Route::post('/drinks', 'ProductController@addDrinkToCart');
 
+Route::get('/settings','SettingsController@show')->name('settings')->middleware('auth');
+
+Route::post('/settings','SettingsController@update');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -44,21 +51,37 @@ Route::get('/favourites', function () {
     return view('favourites');
 });
 
-Route::get('/productlist', function () {
-    return view('backend/productlist');
-})->middleware('auth');
+// Route::get('/productlist', function () {
+//     return view('backend/productlist');
+// });
+Route::get('/productlist', 'ProductController@show');
+Route::get('delete/{product_id}','ProductController@destroy');
 
-Route::get('/addproduct', function () {
+Route::get('edit/{product}','ProductController@editshow');
+Route::post('/backend/edit','ProductController@edit');
+
+Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
-})->middleware('auth');
+}]);
 
-Route::get('/dashboard', function () {
+Route::post('/backend/addproduct','ProductController@addProduct');
+
+Route::get('/viewvendors','VendorsController@index');
+
+Route::get('/addvendors', ['middleware' => 'admin', function () {
+    return view('backend/addvendors');
+}]);
+
+Route::delete('/viewvendors/{vendor_id}','VendorsController@destroy');
+
+Route::post('/backend/addvendors','VendorsController@addVendor');
+
+
+Route::get('/dashboard', ['middleware' => 'admin', function () {
     return view('backend/dashboard');
-});
+}]);
 
-Route::get('/orders', function () {
-    return view('backend/orders');
-})->middleware('auth');
+Route::get('/orders','OrderController@index');
 
 Route::get('/register','RegisterController@create')->name('register');
 Route::post('/register','RegisterController@store');
@@ -67,10 +90,4 @@ Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login','LoginController@store');
 Route::get('/logout', 'LoginController@destroy');
 
-
-//Route::get('/cart', 'ProductController@cart')->name('cart');
-//Route::post('/cart', 'ProductController@cart')->name('cart');
-
-Route::get('/checkout', function () {
-    return view('checkout');
-})->middleware('auth');
+Route::get('/checkout', 'CheckoutController@show')->name('checkout');

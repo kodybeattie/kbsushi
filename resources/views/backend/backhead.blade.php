@@ -13,6 +13,7 @@
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/font-awesome.min.css">
@@ -53,6 +54,8 @@
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/backend/responsive.css">
@@ -73,16 +76,18 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
-                                   <i class="icon nalika-home icon-wrap"></i>
+                            <a class="has-arrow" href="/">
                                    <span class="mini-click-non">Kiyoshi Bai Sushi</span>
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="/dashboard"><span class="mini-sub-pro">Dashboard</span></a></li>
-
-                                <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
                                 <li><a title="Product Detail" href="/addproduct"><span class="mini-sub-pro">Add a Product</span></a></li>
+                                <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
+                                
+                                <li><a title="Add Vendors" href="/addvendors"><span class="mini-sub-pro">Add Vendors</span></a></li>
+                                <li><a title="View Vendors" href="/viewvendors"><span class="mini-sub-pro">View Vendors</span></a></li>
                                 <li><a title="Product Cart" href="/orders"><span class="mini-sub-pro">Orders</span></a></li>
+                                
 
                             </ul>
                         </li>
