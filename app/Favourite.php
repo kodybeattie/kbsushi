@@ -22,11 +22,11 @@ class Favourite extends Model
     }
 
     public static function getByUserId($id)
-  {
-    return static::selectRaw('*')
-                    ->where('product_id', '=', $id)
-                    ->orderBy('product_id','asc')
+  	{
+    	return static::selectRaw('*')
+                    ->where('user_id', '=', $id)
+                    ->orderBy('user_id','asc')
                     ->get()
                     ->toArray();
-  }
+		}
 }

@@ -49,9 +49,9 @@
           </div>
         </div>
 
-        <div>        
-            <button type="button" class="qty qty-plus" id="favourite" onclick="addToFavourites({{ $user_id, $sushi['product_id'] }})"> FAVE </button>
-          </div>
+        <div>
+            <input type="checkbox" name="faves[]" value="{{ $sushi['product_id'] }}"> Favourite
+        </div>
 
       </div>
     @endforeach

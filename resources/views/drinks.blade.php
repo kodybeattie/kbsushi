@@ -50,8 +50,8 @@
             <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $drink['product_id'] }})">+</button>
           </div>
 
-          <div>        
-            <button type="button" class="qty qty-plus" id="favourite" onclick="addToFavourites({{ $user_id, $drink['product_id'] }})"> FAVE </button>
+          <div>
+            <input type="checkbox" name="faves[]" value="{{ $drink['product_id'] }}"> Favourite
           </div>
 
         </div>

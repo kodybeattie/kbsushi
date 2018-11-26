@@ -1,4 +1,4 @@
-<?php use Illuminate\Support\Facades\Auth; 
+<?php use Illuminate\Support\Facades\Auth;
      use Illuminate\Support\Facades\DB;
     use App\Favourite;
 ?>
@@ -36,42 +36,18 @@
           document.getElementById(strId).value = value;
         }
 
-      function decreaseValue(id) {
-        var strId = id.toString();
-        var value = parseInt(document.getElementById(strId).value, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? value = 1 : '';
-        value--;
-        document.getElementById(strId).value = value;
-      }     
-
-      function addToFavourites(id, productId){
-        var result = Favourite::where('user_id', '=', id)
-            ->where('product_id', '=', productId)
-            ->get();
-            dd(id);
-        if(result == null)
-        {
-            //if not then add these to favourites.
-            //Maybe add flash message for each outcome
-            DB::table('favourites')->insert([
-                'user_id' => id,
-                'product_id' => productId
-            ]);
+        function decreaseValue(id) {
+          var strId = id.toString();
+          var value = parseInt(document.getElementById(strId).value, 10);
+          value = isNaN(value) ? 0 : value;
+          value < 1 ? value = 1 : '';
+          value--;
+          document.getElementById(strId).value = value;
         }
-        else
-        {
-            //If so then remove them
-            DB::table('favourites')->where('user_id', '=', id)
-            ->where('product_id ', '=', productId)
-            ->delete();
-        }
-       
 
-      }
     </script>
 
-   
+
 
 </head>
 
@@ -100,8 +76,8 @@
                         if (Auth::user())
                         {
                             $ad = Auth::user()->user_type;
-                          
-                        } 
+
+                        }
                      ?>
                     <div class="classynav">
                         <ul>
@@ -111,8 +87,8 @@
                             <li><a href="/">Home</a>
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <?php 
-                            } 
+                            <?php
+                            }
                             else
                             {
                             ?>
@@ -152,8 +128,8 @@
                      <!-- Favourite Area -->
 
                 <?php
-                 if (Auth::user() && $ad == 1)  
-                        
+                 if (Auth::user() && $ad == 1)
+
                 {
                   ?>
                     <div class="favourite-area">
