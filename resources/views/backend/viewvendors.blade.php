@@ -69,7 +69,7 @@ use \App\Vendor;
 
            @foreach($vendors as $vendor)
                 <tr class="product">
-                <td>{{ $vendor->vendor_id }}</td>
+                <td>{{ $vendor->vendor_name }}</td>
                 <td>{{ Vendor::phoneNumber($vendor->phone_number) }}</td>
                
                 <td>

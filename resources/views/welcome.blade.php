@@ -3,13 +3,13 @@
 @include ('layouts.nav')
 
 
-    <section class="welcome_area bg-img background-overlay" style="background-image: url(images/maki.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
+<section class="welcome_area bg-img background-overlay" style="background-image: url(images/maki.jpg);">
+        <div class="container h-10">
+            <div class="row h-50 align-items-center">
                 <div class="col-12">
                     <div class="hero-content">
                         <h6></h6>
-                        <h2>Kiyoshi Bai Sushi</h2>
+                        <h2 style="color:#FF4500;">Kiyoshi Bai Sushi</h2>
 
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(images/soup.jpeg);">
                         <div class="catagory-content">
-                            <a href="#">Soups & Appetizers</a>
+                            <a href="/sushi">Soups & Appetizers</a>
                         </div>
                     </div>
                 </div>
