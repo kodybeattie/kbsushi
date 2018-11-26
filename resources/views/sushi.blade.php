@@ -5,6 +5,7 @@
  use App\Product;
  use App\Http\Controllers;
  $products = Product::getByCategory(0);
+ $user_id = auth()->user()->user_id ;
  ?>
 
  <link rel="stylesheet" href="css/product.css">
@@ -46,6 +47,10 @@
           <div>
             <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $sushi['product_id'] }})">+</button>
           </div>
+        </div>
+
+        <div>
+            <input type="checkbox" name="faves[]" value="{{ $sushi['product_id'] }}"> Favourite
         </div>
 
       </div>

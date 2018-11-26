@@ -4,6 +4,10 @@
  use App\Product;
  use App\Http\Controllers;
  $products = App\Product::getByCategory(1);
+ $user_id = auth()->user()->user_id ;
+ //$user = Auth::User()->user_id;
+ //$currentUser = User::find($user);
+ //<button type="button" class="qty qty-plus" id="Favourite" onclick="addToFavourites({{ $user['user_id'], $drink['product_id'] }})">+</button>
  ?>
 
  <link rel="stylesheet" href="css/product.css">
@@ -45,6 +49,11 @@
           <div>
             <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $drink['product_id'] }})">+</button>
           </div>
+
+          <div>
+            <input type="checkbox" name="faves[]" value="{{ $drink['product_id'] }}"> Favourite
+          </div>
+
         </div>
 
       </div>

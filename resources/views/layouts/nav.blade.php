@@ -1,4 +1,8 @@
-<?php use Illuminate\Support\Facades\Auth; ?>
+<?php use Illuminate\Support\Facades\Auth;
+     use Illuminate\Support\Facades\DB;
+    use App\Favourite;
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,15 +36,17 @@
           document.getElementById(strId).value = value;
         }
 
-      function decreaseValue(id) {
-        var strId = id.toString();
-        var value = parseInt(document.getElementById(strId).value, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? value = 1 : '';
-        value--;
-        document.getElementById(strId).value = value;
-      }
+        function decreaseValue(id) {
+          var strId = id.toString();
+          var value = parseInt(document.getElementById(strId).value, 10);
+          value = isNaN(value) ? 0 : value;
+          value < 1 ? value = 1 : '';
+          value--;
+          document.getElementById(strId).value = value;
+        }
+
     </script>
+
 
 
 </head>
@@ -70,8 +76,8 @@
                         if (Auth::user())
                         {
                             $ad = Auth::user()->user_type;
-                          
-                        } 
+
+                        }
                      ?>
                     <div class="classynav">
                         <ul>
@@ -81,8 +87,8 @@
                             <li><a href="/">Home</a>
                             <li><a href="/about">About</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <?php 
-                            } 
+                            <?php
+                            }
                             else
                             {
                             ?>
@@ -104,7 +110,9 @@
                         {
                         ?>
                             <li><a href="/logout">Logout</a></li>
-                            
+
+                            <li><a href="/favourites">Favourite</a></li>
+
                         <?php
                         }
                         ?>
@@ -120,8 +128,8 @@
                      <!-- Favourite Area -->
 
                 <?php
-                 if (Auth::user() && $ad == 1)  
-                        
+                 if (Auth::user() && $ad == 1)
+
                 {
                   ?>
                     <div class="favourite-area">

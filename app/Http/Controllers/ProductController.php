@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Session;
 class ProductController extends Controller
 {
@@ -97,7 +98,17 @@ class ProductController extends Controller
     {
       $products = Product::getByCategory(0);
       $quantities = $request->input('quantities.*');
+      $faves = $request->input('faves.*');
       $cart = Session::get('cart')[0];
+      //if not then add these to favourites.
+      //Maybe add flash message for each outcome
+      for ($i=0; $i<=count($faves)-1; $i++)
+      {
+        DB::table('favourites')->insert([
+            'user_id' => Auth::id(),
+            'product_id' => $faves[$i]
+        ]);
+      }
       if (!$cart)
       {
         $cart= array();
@@ -139,6 +150,14 @@ class ProductController extends Controller
     {
       $products = Product::getByCategory(1);
       $quantities = $request->input('quantities.*');
+      $faves = $request->input('faves.*');
+      for ($i=0; $i<=count($faves)-1; $i++)
+      {
+        DB::table('favourites')->insert([
+            'user_id' => Auth::id(),
+            'product_id' => $faves[$i]
+        ]);
+      }
       $cart = Session::get('cart')[0];
       // if cart empty ****** this works fine **********
       if (!$cart)
@@ -175,8 +194,18 @@ class ProductController extends Controller
       }
       Session::forget('cart');
       Session::push('cart', $cart);
-      return redirect('/cart');
+      return redirect()->route('cart');
     }
 
+/*
+    public function show($id)
+    {
+    	$product = Product::find($id);
+    	return view('product.show', compact('product'));
+
+      return redirect('/cart');
+
+    }
+*/
 
 }
