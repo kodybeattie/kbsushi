@@ -2,6 +2,8 @@
 <html class="no-js" lang="en">
 <?php
 use App\User;
+use Carbon\Carbon;
+
 ?>
 @include('backend.backhead')
 
@@ -72,7 +74,7 @@ use App\User;
                                                 $cust= null;
                                                    for ($i = 0; $i <= count($users)-1; $i++)
                                                
-                                                   { ?>   <?php
+                                                   { ?>   <?php //dd(count($users));
                                                        if (!isset($cust))
                                                        {
                                                            $cust = $users[$i]->first_name;
@@ -86,13 +88,14 @@ use App\User;
                                                                 if($cust == $users[$b]->first_name)
                                                                 { ?> <li>
                                                                     {{ $products[$b]->product_name}}
-                                                                    </li> <span> x {{$users[$i]->quantity}} </span> 
+                                                                    </li> <span> x {{$users[$b]->quantity}} </span> 
                                                                     
                                                                 <?php
                                                                 }
                                                             }?> </ol>
                                                             </td>
-                                                            <td>{{$users[$i]->datetime_ordered}}</td>
+                                                            <td>{{ Carbon::parse($users[$i]->datetime_ordered)->format('g: i A')}}</td>
+                                                          
                                                             <td>{{User::phoneNumber($users[$i]->phone_number)}}</td>
                                                             <td>                                                        
                                                                 <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -103,9 +106,32 @@ use App\User;
 
                                                        }
                                                        elseif ($cust !=$users[$i]->first_name )
-                                                            
+                                                        //else    
                                                        {
-                                                           $cust= null;
+                                                           $cust= $users[$i]->first_name;?> 
+                                                           <tr> <td>
+                                                           <h3> {{ $cust}} </h3>  <ol>
+                                                           <?php 
+                                                            
+                                                            
+                                                            for($b = 0; $b<=count($products)-1;$b++)
+                                                            {
+                                                                if($cust == $users[$b]->first_name)
+                                                                { ?> <li>
+                                                                    {{ $products[$b]->product_name}}
+                                                                    </li> <span> x {{$users[$b]->quantity}} </span> 
+                                                                    
+                                                                <?php
+                                                                }
+                                                            }?> </ol>
+                                                            </td>
+                                                            <td>{{ Carbon::parse($users[$i]->datetime_ordered)->format('g:i A')}}</td>
+                                                            <td>{{User::phoneNumber($users[$i]->phone_number)}}</td>
+                                                            <td>                                                        
+                                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fas fa-trash" aria-hidden="true"></i></button>
+                                                             </td>
+                                                            </tr> <?php
                                                        } 
                                                       
                                                       

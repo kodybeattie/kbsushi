@@ -3,6 +3,16 @@
 
 @include('backend.backhead')
 
+<script>
+function myFunction() {
+    document.getElementById("theImage").src="images/GraphOne.png";
+
+}
+function myFunction2() {
+    document.getElementById("theImage").src="images/GraphTwo.png";
+
+}
+</script>
 
 
     <!--[if lt IE 8]>
@@ -74,7 +84,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom:1px;">
                             <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Tax Deduction</b></h4>
+                                <h4 class="text-left text-uppercase"><b>Expenses</b></h4>
                                 <div class="row vertical-center-box vertical-center-box-tablet">
                                     <div class="text-left col-xs-3 mar-bot-15">
                                         <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
@@ -139,16 +149,22 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="actions graph-rp">
                                             <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-grey active">
-                                                    <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label>
-                                                <label class="btn btn-grey">
-                                                    <input type="radio" name="options" class="toggle" id="option2">Week</label>
+                                                <label class="btn btn-grey "
+                                                   
+                                                     onclick="myFunction()">Monthly </label>
+                                                     <label class="btn btn-grey "
+                                                   
+                                                   onclick="myFunction2()">Yearly </label>
+                                                    
+                                               
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
+                            <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic">
+                            <img id="theImage" src="images/GraphOne.png" alt="Smiley face" width="942" height="542">
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -328,40 +344,4 @@
         </div>
     </div>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include ('backend.backfooter')

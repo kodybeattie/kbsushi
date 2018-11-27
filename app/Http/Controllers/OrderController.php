@@ -24,7 +24,7 @@ class OrderController extends Controller
         ->join('order_products','order_products.product_id', '=', 'products.product_id')
         ->select('products.*')
         ->get();
-            $cust = $users[0]->first_name;
+            //$cust = $users[0]->first_name;
            //dd($products);
       
             
@@ -48,7 +48,7 @@ class OrderController extends Controller
                                             'product_id' => $product_id,
                                             'quantity' => $info['quantity']]);
       }
-      //Session::forget('cart');
+      Session::forget('cart');
       return redirect()->home();
     }
 }
