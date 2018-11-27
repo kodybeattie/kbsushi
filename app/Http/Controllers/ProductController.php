@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\Inventory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -94,6 +95,42 @@ class ProductController extends Controller
     	return view('backend/productlist', compact('products'));
     }
 
+    public function viewInventory()
+    {
+      $inventory = DB::table('inventory')->get();
+
+      //dd($products->product_name);
+      //this is just another way to return the array
+    	//return view('backend/productlist',['products'=>$products]);
+    	return view('backend/inventory', compact('inventory'));
+    }
+
+    public function addInventory(Request $request){
+      if($request-> isMethod('post')){
+
+          $this->validate(request(), [
+          'ing_name' => 'required|unique:inventory',
+          'quantity' => 'required',
+          'units' => 'required',
+           ]);
+
+
+         $data = $request->all();
+         $inventory = new inventory;
+
+         //$product = product::all();
+         $inventory->ing_name = $data['ing_name'];
+         $inventory->quantity = $data['quantity'];
+         $inventory->units = $data['units'];
+     
+         $inventory->save();
+       // dd($product->product_name);
+           return back();
+       };
+
+ }
+
+
     public function addSushiToCart(Request $request)
     {
       $products = Product::getByCategory(0);
@@ -143,7 +180,9 @@ class ProductController extends Controller
       }
       Session::forget('cart');
       Session::push('cart', $cart);
+      
       return redirect()->route('cart');
+      
     }
 
     public function addDrinkToCart(Request $request)

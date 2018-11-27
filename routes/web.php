@@ -64,7 +64,15 @@ Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
 }]);
 
+Route::get('/addInventory', ['middleware' => 'admin', function () {
+    return view('backend/addInventory');
+}]);
+
+Route::post('/backend/addInventory','ProductController@addInventory');
+
 Route::post('/backend/addproduct','ProductController@addProduct');
+
+Route::get('/inventory','ProductController@viewInventory');
 
 Route::get('/viewvendors','VendorsController@index');
 
