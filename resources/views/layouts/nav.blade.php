@@ -111,7 +111,7 @@
                         ?>
                             <li><a href="/logout">Logout</a></li>
 
-                            <li><a href="/favourites">Favourite</a></li>
+                            
 
                         <?php
                         }
@@ -133,7 +133,7 @@
                 {
                   ?>
                     <div class="favourite-area">
-                        <a href="/favorites"><img src="/images/like.png" alt=""></a>
+                        <a href="/favourites"><img src="/images/like.png" alt=""></a>
                     </div>
                 <!-- User Login Info -->
                     <div class="user-login-info">

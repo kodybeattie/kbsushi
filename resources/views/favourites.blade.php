@@ -42,12 +42,12 @@ $dproducts = Product::getByCategory(1);
           for($i = 0; $i<count($test); $i++){
             ?>
             <div class="layout-inline row row-bg2">
-            <div class="col col-pro layout-inline">
+            <div class="col col-pro layout-inline " >
                 <?php echo $test[$i]->product_name; ?>
-              <div class="col col-price col-numeric align-center ">
+              <div class="col col-price col-numeric align-center">
                 <?php echo $test[$i]->product_description; ?>
               </div>
-              <div class="col col-price col-numeric align-right ">
+              <div class="col col-price col-numeric align-center">
                 <?php echo $test[$i]->price; ?>
               </div>
             </div>
@@ -57,16 +57,15 @@ $dproducts = Product::getByCategory(1);
           
           ?>
 
-        </div>
+      </div>
 
         
+
 
       </div>
     
 
-    <input type="submit" class="btn btn-update" value="Update Cart">
-
-    </div>
+   
     </div>
 @include ('layouts.foot')
 

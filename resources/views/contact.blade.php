@@ -23,7 +23,8 @@
 
         <div class="contact-info">
             <h2>Kiyoshi Bai Sushi</h2>
-            <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
+            <p>Look to the north end of Simcoe Street. A sign should be visible once 
+            close!</p>
 
                 <p><span>address:</span> 10 Simcoe Oshawa, Canada</p>
                 <p><span>telephone:</span> +1647-583-3859</p>
