@@ -24,31 +24,42 @@ $dproducts = Product::getByCategory(1);
         </div>
         <div class="col col-qty align-center">Price</div>
 
-      </div>
-      
-      <div class="layout-inline row row-bg2">
-
-        <div class="col col-pro layout-inline">
-          <p></p>
-          <?php
-          //$test = DB::table('products')->where('product_id', '=', $fave['product_id']);
+        <?php
+          //Gets test (The array for favourites)
           $test = DB::table('products')
           ->join('favourites', 'products.product_id', '=', 'favourites.product_id')
           ->select('products.product_name', 'products.product_description', 'products.price')
           ->get();
-          //dd($test);
+          
+          
+          ?>
+
+      </div>
+      
+          
+          <?php  
+          //Displays the lines from the array
           for($i = 0; $i<count($test); $i++){
-            
-            ?> <ol> <li> {{ $test[$i]->product_name}} </li> </ol> <?php 
-          } ?>
+            ?>
+            <div class="layout-inline row row-bg2">
+            <div class="col col-pro layout-inline">
+                <?php echo $test[$i]->product_name; ?>
+              <div class="col col-price col-numeric align-center ">
+                <?php echo $test[$i]->product_description; ?>
+              </div>
+              <div class="col col-price col-numeric align-right ">
+                <?php echo $test[$i]->price; ?>
+              </div>
+            </div>
+            </div>
+            <?php
+          }
           
-          
+          ?>
 
         </div>
 
-        <div class="col col-price col-numeric align-center ">
-         
-        </div>
+        
 
       </div>
     
@@ -58,3 +69,5 @@ $dproducts = Product::getByCategory(1);
     </div>
     </div>
 @include ('layouts.foot')
+
+
