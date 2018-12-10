@@ -3,18 +3,6 @@
 
 @include('backend.backhead')
 
-<script>
-function myFunction() {
-    document.getElementById("theImage").src="images/GraphOne.png";
-
-}
-function myFunction2() {
-    document.getElementById("theImage").src="images/GraphTwo.png";
-
-}
-</script>
-
-
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -28,7 +16,7 @@ function myFunction2() {
 
 
         <div class="header-advance-area">
-    
+
 
 
 
@@ -48,19 +36,19 @@ function myFunction2() {
                                             </div>
                                             <div class="breadcomb-ctn">
                                                 <h2>Dashboard</h2>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
-                           
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-       
+
      </div>
-       
+
 
         <div class="section-admin container-fluid">
             <div class="row admin text-center">
@@ -145,25 +133,36 @@ function myFunction2() {
                                         <div class="caption pro-sl-hd">
                                             <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="actions graph-rp">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-grey "
-                                                   
-                                                     onclick="myFunction()">Monthly </label>
-                                                     <label class="btn btn-grey "
-                                                   
-                                                   onclick="myFunction2()">Yearly </label>
-                                                    
-                                               
-                                            </div>
-                                        </div>
+                                        <!-- put chart here -->
+                                        <canvas id="myChart" width="600" height="600"></canvas>
+                                        <script>
+                                          var ctx = document.getElementById("myChart").getContext('2d');
+                                          var myChart = new Chart(ctx, {
+                                              type: 'line',
+                                              data: {
+                                                  labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                                                  datasets: [{
+                                                      data: [23, 2736, 10000, 13675, 12434, 3123, 8484, 3432, 4543, 2564, 6543, 3456],
+                                                      backgroundColor: 'rgba(12,100,50,99)',
+                                                      borderColor: [
+                                                          'rgba(100,194,132,1)',
+                                                      ],
+                                                      borderWidth: 5
+                                                  }]
+                                              },
+                                              options: {
+                                                  scales: {
+                                                      yAxes: [{
+                                                          ticks: {
+                                                              beginAtZero:true
+                                                          }
+                                                      }]
+                                                  }
+                                              }
+                                          });
+                                        </script>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic">
-                            <img id="theImage" src="images/GraphOne.png" alt="Smiley face" width="942" height="542">
                             </div>
                         </div>
                     </div>
@@ -265,7 +264,7 @@ function myFunction2() {
                 </div>
             </div>
         </div>
-           
+
         <div class="product-sales-area mg-tb-30">
             <div class="container-fluid">
                 <div class="row">
@@ -319,7 +318,7 @@ function myFunction2() {
                 </div>
             </div>
         </div>
-   
+
         <div class="calender-area mg-tb-30">
             <div class="container-fluid">
                 <div class="row">
@@ -343,5 +342,5 @@ function myFunction2() {
             </div>
         </div>
     </div>
-    
+
     @include ('backend.backfooter')
