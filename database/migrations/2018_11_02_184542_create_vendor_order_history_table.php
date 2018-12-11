@@ -19,7 +19,7 @@ class CreateVendorOrderHistoryTable extends Migration
             $table->integer('ing_id')->nullable();
             $table->integer('product_id')->nullable();
             $table->float('quantity', 6, 2);
-            $table->integer('units');
+            $table->smallInteger('units');
             $table->float('cost' , 6, 2);
             $table->dateTime('date_ordered');
             $table->dateTime('date_recieved')->nullable();
