@@ -66,6 +66,12 @@ Route::get('/addproduct', ['middleware' => 'admin', function () {
 
 Route::get('/ingredients','ProductController@viewIng');
 
+Route::get('/addhistory','VendorsController@addHistory');
+
+Route::post('/backend/addhistory','VendorsController@insertHistory');
+
+Route::get('/vendorhistory','VendorsController@viewhistory');
+
 Route::get('/addInventory', ['middleware' => 'admin', function () {
     return view('backend/addInventory');
 }]);

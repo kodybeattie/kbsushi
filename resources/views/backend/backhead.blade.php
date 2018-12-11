@@ -62,6 +62,8 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+
 
 </head>
 
@@ -90,6 +92,8 @@
                                 <li><a title="Add Inventory" href="/addInventory"><span class="mini-sub-pro">Add Inventory</span></a></li>
                                 <li><a title="Add Ingredients" href="/ingredients"><span class="mini-sub-pro">Add Ingredients</span></a></li>
                                 <li><a title="View Inventory" href="/inventory"><span class="mini-sub-pro">View Inventory</span></a></li>
+                                <li><a title="Add Vendor Records" href="/addhistory"><span class="mini-sub-pro">Add Vendor Record</span></a></li>
+                                <li><a title="View Vendor Records" href="/vendorhistory"><span class="mini-sub-pro">View Vendor Records</span></a></li>
 
                                 <li><a title="Product Cart" href="/orders"><span class="mini-sub-pro">Orders</span></a></li>
 
