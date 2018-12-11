@@ -37,20 +37,21 @@ $dproducts = Product::getByCategory(1);
       </div>
       
           
-          <?php  
+      <?php
           //Displays the lines from the array
           for($i = 0; $i<count($test); $i++){
             ?>
             <div class="layout-inline row row-bg2">
             <div class="col col-pro layout-inline " >
                 <?php echo $test[$i]->product_name; ?>
+                </div>
               <div class="col col-price col-numeric align-center">
-                <?php echo $test[$i]->product_description; ?>
+                <?php echo $test[$i]->product_description; ?> 
               </div>
               <div class="col col-price col-numeric align-center">
-                <?php echo $test[$i]->price; ?>
+                <?php echo $test[$i]->price; ?> 
               </div>
-            </div>
+
             </div>
             <?php
           }
@@ -67,6 +68,6 @@ $dproducts = Product::getByCategory(1);
 
    
     </div>
-@include ('layouts.foot')
+
 
 

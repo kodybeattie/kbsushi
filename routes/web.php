@@ -64,6 +64,8 @@ Route::get('/addproduct', ['middleware' => 'admin', function () {
     return view('backend/addproduct');
 }]);
 
+Route::get('/ingredients','ProductController@viewIng');
+
 Route::get('/addInventory', ['middleware' => 'admin', function () {
     return view('backend/addInventory');
 }]);
@@ -71,6 +73,8 @@ Route::get('/addInventory', ['middleware' => 'admin', function () {
 Route::post('/backend/addInventory','ProductController@addInventory');
 
 Route::post('/backend/addproduct','ProductController@addProduct');
+
+Route::post('/backend/addingredients','ProductController@addIngredient');
 
 Route::get('/inventory','ProductController@viewInventory');
 

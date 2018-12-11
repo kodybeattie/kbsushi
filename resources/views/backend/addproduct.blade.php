@@ -57,15 +57,10 @@
             <div class="cust-con">
               <select name="category" id="category" class="control-group">
                   <placeholder> Select One Value Only</placeholder>
+                  
                   <option value="0">Sushi</option>
                   <option value="1">Drinks</option>
               </select>
-
-
-           
-
-
-           
 
               <div class="control-group ">
                 <label class="control-label">Product Name</label>
@@ -80,15 +75,13 @@
                   <input type="text" name="price" id="price">
                 </div>
               </div>
-
+            
               <div class="control-group">
                 <label class="control-label">Description</label>
                 <div class="controls">
-                  <textarea name="product_description" id="product_description"></textarea>
+                  <textarea name="product_description" id="product_description"></textarea>     
                 </div>
               </div>
-
-
 
               <div class="form-actions">
                 <input type="submit" value="Add Product" class="btn btn-success">

@@ -49,6 +49,7 @@ class OrderController extends Controller
                                             'quantity' => $info['quantity']]);
       }
       Session::forget('cart');
+      Session::flash('message', 'Order Complete, Please allow 15-20 mins for your food to be ready'); 
       return redirect()->home();
     }
 }

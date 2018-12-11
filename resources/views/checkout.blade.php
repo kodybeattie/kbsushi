@@ -190,6 +190,7 @@ $total = 0;
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+                                    
                                 </div>
                             </div>
                         </div>
