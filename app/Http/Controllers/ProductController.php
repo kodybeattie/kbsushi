@@ -56,6 +56,12 @@ class ProductController extends Controller
    public function addIngredient(Request $request){
     if($request-> isMethod('post')){
 
+      $this->validate(request(), [
+        'product' => 'required',
+        'inventory' => 'required',
+         'ing_quantity' => 'required|numeric',
+         
+         ]);
        $data = $request->all();
        $ing = new ingredient;
       //dd($data);

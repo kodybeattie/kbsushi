@@ -69,7 +69,54 @@
                 <tr class="product">
                 <td>{{ $product->ing_name }}</td>
                 <td>{{ $product->quantity }}</td>
-                <td>{{ $product->units }}</td>
+                <?php 
+                    if ($product->units == 0)
+                    {?>
+                       <td> tsp</td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 1)
+                    {?>
+                       <td> tbsp </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 2)
+                    {?>
+                       <td> ml </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 3)
+                    {?>
+                       <td> L </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 4)
+                    {?>
+                       <td> lb </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 5)
+                    {?>
+                       <td> g </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 6)
+                    {?>
+                       <td> kg </td> <?php
+                    }
+                ?>
+                <?php
+                    if ($product->units == 7)
+                    {?>
+                       <td> units </td> <?php
+                    }
+                ?>
 
 
           @endforeach

@@ -70,11 +70,14 @@
                   <input type="text" name="quantity" id="quantity"><span> 
                     <select name="units" id="units" class="control-group">
                         <placeholder> Select One Value Only</placeholder>
-                        <option value="0">mg</option>
-                        <option value="1">g</option>
-                        <option value="2">kg</option>
-                        <option value="3">ml</option>
-                        <option value="4">l</option>
+                        <option value="0">tsp</option>
+                        <option value="1">tbsp</option>
+                        <option value="2">ml</option>
+                        <option value="3">L</option>
+                        <option value="4">lb</option>
+                        <option value="5">g</option>
+                        <option value="6">kg</option>
+                        <option value="7">units</option> 
                     </select> </span>
                 </div>
               </div>

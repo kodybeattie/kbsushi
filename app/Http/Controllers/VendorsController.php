@@ -39,6 +39,12 @@ class VendorsController extends Controller
    public function insertHistory(Request $request){
     if($request-> isMethod('post')){
 
+        $this->validate(request(), [
+            'price' => 'required|numeric',
+             'ing_quantity' => 'required|numeric',
+             
+             ]);
+
        $data = $request->all();
        $ing = new vendor_order;
       //dd($data);

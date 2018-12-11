@@ -1873,7 +1873,8 @@ ul.tab-custon-design li.active a, ul.tab-review-design li.active a{
 }
 .product-status-wrap.border-pdt-ct p{
 	font-size:14px;
-	color:#fff;
+    color:#fff;
+    
 }
 .wizard > .steps{
     position: relative;
@@ -2130,7 +2131,8 @@ ul.tab-custon-design li.active a, ul.tab-review-design li.active a{
     display: none;
 }
 .product-status-wrap.border-pdt-ct{
-	box-shadow:none;
+    box-shadow:none;
+    padding: 50px;
 }
 .product-payment-inner-st{
 	padding:20px;
