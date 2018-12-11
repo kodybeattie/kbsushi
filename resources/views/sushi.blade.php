@@ -5,7 +5,6 @@
  use App\Product;
  use App\Http\Controllers;
  $products = Product::getByCategory(0);
- $user_id = auth()->user()->user_id ;
  ?>
 
  <link rel="stylesheet" href="css/product.css">
