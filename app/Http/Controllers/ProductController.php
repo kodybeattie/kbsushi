@@ -122,7 +122,7 @@ class ProductController extends Controller
          $inventory->ing_name = $data['ing_name'];
          $inventory->quantity = $data['quantity'];
          $inventory->units = $data['units'];
-     
+
          $inventory->save();
        // dd($product->product_name);
            return back();
@@ -139,13 +139,17 @@ class ProductController extends Controller
       $cart = Session::get('cart')[0];
       //if not then add these to favourites.
       //Maybe add flash message for each outcome
-      for ($i=0; $i<=count($faves)-1; $i++)
+      if (count($faves) > 0)
       {
-        DB::table('favourites')->insert([
-            'user_id' => Auth::id(),
-            'product_id' => $faves[$i]
-        ]);
+        for ($i=0; $i<=count($faves)-1; $i++)
+        {
+          DB::table('favourites')->insert([
+              'user_id' => Auth::id(),
+              'product_id' => $faves[$i]
+          ]);
+        }
       }
+
       if (!$cart)
       {
         $cart= array();
@@ -180,9 +184,9 @@ class ProductController extends Controller
       }
       Session::forget('cart');
       Session::push('cart', $cart);
-      
+
       return redirect()->route('cart');
-      
+
     }
 
     public function addDrinkToCart(Request $request)
