@@ -34,7 +34,7 @@
                                             <i class="fas fa-plus fa-2x fa-border" style="background:MistyRose"></i>
                                             </div>
                                             <div class="breadcomb-ctn">
-                                                <h2>Add Inventory</h2>
+                                                <h2>Add Ingredients</h2>
 
                                             </div>
                                         </div>
@@ -50,42 +50,58 @@
 
 
 
-  <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addInventory') }}" name="addInventory" id="addInventory" novalidate="novalidate"> {{ csrf_field() }}
+  <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ url('/backend/addingredients') }}" name="addIngredient" id="addIngredient" novalidate="novalidate"> {{ csrf_field() }}
 
       <input type="hidden" name="_token" value="{{csrf_token()}}">
-
+            
+            
+ 
             <div class="cust-con">
-             
 
-              <div class="control-group ">
-                <label class="control-label">Ingredient Name</label>
-                <div class="controls">
-                  <input type="text" name="ing_name" id="ing_name" required
-                       value="{{ old('product_name') }}">>
-                </div>
-              </div>
-              <div class="control-group">
+            <label class="control-label">Product</label>
+              <select name="product" id="product" class="control-group">
+                <?php
+                    for ($i = 0; $i <= count($products)-1; $i++)
+                    {             
+                ?>
+                  <placeholder> Select One Value Only</placeholder>
+               
+                  <option value= {{ $products[$i]->product_id }}>{{$products[$i]->product_name }}</option>
+                    <?php }?>
+              </select>
+
+               <label class="control-label">Ingredients</label>
+              <select name="inventory" id="inventory" class="control-group">
+                <?php
+                    for ($i = 0; $i <= count($inventory)-1; $i++)
+                    {             
+                ?>
+                  <placeholder> Select One Value Only</placeholder>
+               
+                  <option value= {{ $inventory[$i]->ing_id }}>{{$inventory[$i]->ing_name }}</option>
+                    <?php }?>
+              </select>
+
+                            <div class="control-group">
                 <label class="control-label">Quantity</label>
                 <div class="controls">
-                  <input type="text" name="quantity" id="quantity"><span> 
-                    <select name="units" id="units" class="control-group">
+                  <input type="text" name="ing_quantity" id="ing_quantity"><span> 
+                    <select name="ing_unit" id="ing_unit" class="control-group">
                         <placeholder> Select One Value Only</placeholder>
-                        <option value="0">mg</option>
-                        <option value="1">g</option>
-                        <option value="2">kg</option>
-                        <option value="3">ml</option>
-                        <option value="4">l</option>
+                        <option value="0">tsp</option>
+                        <option value="1">tbsp</option>
+                        <option value="2">ml</option>
+                        <option value="3">L</option>
+                        <option value="4">lb</option>
+                        <option value="5">g</option>
+                        <option value="6">kg</option>
+                        <option value="7">units</option>
                     </select> </span>
                 </div>
               </div>
-              
-
-             
-
-
 
               <div class="form-actions">
-                <input type="submit" value="Add Inventory" class="btn btn-success">
+                <input type="submit" value="Add Ingredient" class="btn btn-success">
               </div>
 
 

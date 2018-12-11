@@ -62,7 +62,7 @@
                                         <label class="label bg-green">30% <i class="fa fa-level-up" aria-hidden="true"></i></label>
                                     </div>
                                     <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">10,000</h2>
+                                        <h2 class="text-right no-margin">$10,000</h2>
                                     </div>
                                 </div>
                                 <div class="progress progress-mini">
@@ -78,7 +78,7 @@
                                         <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
                                     </div>
                                     <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">5,000</h2>
+                                        <h2 class="text-right no-margin">$5,000</h2>
                                     </div>
                                 </div>
                                 <div class="progress progress-mini">

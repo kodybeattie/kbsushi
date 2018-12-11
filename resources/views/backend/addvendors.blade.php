@@ -22,7 +22,7 @@
                                             <i class="fas fa-plus fa-2x fa-border" style="background:MistyRose"></i>
                                             </div>
                                             <div class="breadcomb-ctn">
-                                                <h2>Add A Product</h2>
+                                                <h2>Add A Vendor</h2>
 
                                             </div>
                                         </div>
