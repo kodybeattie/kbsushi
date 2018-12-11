@@ -72,7 +72,7 @@
                 <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                 <strong><img src="img/logo/logosn.png" alt="" /></strong>
             </div>
-            
+
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
@@ -84,15 +84,15 @@
                                 <li><a title="Dashboard v.1" href="/dashboard"><span class="mini-sub-pro">Dashboard</span></a></li>
                                 <li><a title="Product Detail" href="/addproduct"><span class="mini-sub-pro">Add a Product</span></a></li>
                                 <li><a title="Product Edit" href="/productlist"><span class="mini-sub-pro">View Products</span></a></li>
-                                
+
                                 <li><a title="Add Vendors" href="/addvendors"><span class="mini-sub-pro">Add Vendors</span></a></li>
                                 <li><a title="View Vendors" href="/viewvendors"><span class="mini-sub-pro">View Vendors</span></a></li>
                                 <li><a title="Add Inventory" href="/addInventory"><span class="mini-sub-pro">Add Inventory</span></a></li>
                                 <li><a title="Add Ingredients" href="/ingredients"><span class="mini-sub-pro">Add Ingredients</span></a></li>
                                 <li><a title="View Inventory" href="/inventory"><span class="mini-sub-pro">View Inventory</span></a></li>
-                               
+
                                 <li><a title="Product Cart" href="/orders"><span class="mini-sub-pro">Orders</span></a></li>
-                                
+
 
                             </ul>
                         </li>

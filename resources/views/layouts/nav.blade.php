@@ -111,7 +111,7 @@
                         ?>
                             <li><a href="/logout">Logout</a></li>
 
-                            
+
 
                         <?php
                         }
@@ -141,7 +141,7 @@
                     </div>
                                 <!-- Cart Area -->
                     <div class="cart-area">
-                        <a href="/cart" id="essenceCartBtn"><img src="/images/shopping-bag.png" alt=""> <span>3</span></a>
+                        <a href="/cart" id="essenceCartBtn"><img src="/images/cart.png" alt=""> <span></span></a>
                     </div>
 
                 <?php
