@@ -61,7 +61,7 @@
                                     <th>Catagory</th>
 
                                      <th>Product Description</th>
-                                      <th>Delete/Edit</th>
+                                      <th>Delete</th>
 
 
 
@@ -72,12 +72,23 @@
                 <td>{{ $product->product_name }}</td>
 
                 <td>${{ $product->price }}</td>
-                <td>{{ $product->category }}</td>
+                <?php 
+                if ( $product->category == 0 )
+                {
+                    ?> <td> Food</td> <?php
+                }
+                elseif ($product->category ==1)
+                {
+                    ?><td> Drink</td> <?php
+                }
+                ?>
+
+                
 
                 <td>{{ $product->product_description }}</td>
                 <td><a href = 'delete/{{ $product->product_id }}'><button type="button" class="btn btn-danger ">Delete</button></a></td>
 
-                 <td><a href='edit/{{ $product->product_id }}'>Edit</a></td>
+                
 
           @endforeach
 

@@ -2,6 +2,9 @@
 
 @include ('layouts.nav')
 
+@if(Session::has('message'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+@endif 
 
 <section class="welcome_area bg-img background-overlay" style="background-image: url(images/maki.jpg);">
         <div class="container h-10">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\Ingredient;
 use App\Inventory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,10 @@ class ProductController extends Controller
             'product_name' => 'required|unique:products',
             'product_description' => 'required',
             'category' => 'required',
-             'price' => 'integer|max:100',]);
+             'price' => 'numeric|max:100',
+             'ing_quantity' => 'required',
+             
+             ]);
 
 
            $data = $request->all();
@@ -42,11 +46,31 @@ class ProductController extends Controller
            $product->product_description = $data['product_description'];
            $product->price = $data['price'];
            $product->save();
+           
          // dd($product->product_name);
              return back();
          };
 
    }
+
+   public function addIngredient(Request $request){
+    if($request-> isMethod('post')){
+
+       $data = $request->all();
+       $ing = new ingredient;
+      //dd($data);
+       //$product = product::all();
+       $ing->product_id = $data['product'];
+       $ing->ing_id = $data['inventory'];
+       $ing->quantity = $data['ing_quantity'];
+       $ing->units = $data['ing_unit'];
+       $ing->save();
+       
+     // dd($product->product_name);
+         return back();
+     };
+
+}
    public function destroy($product_id) {
       DB::delete('delete from products where product_id = ?',[$product_id]);
 
@@ -76,7 +100,24 @@ class ProductController extends Controller
       return back();
    }
 
+   public function viewIng()
+   {
 
+     $products = DB::table('products')
+     ->select('product_id','product_name')
+     ->get();
+
+     $inventory = DB::table('inventory')
+     ->select('ing_id','ing_name')
+     ->get();
+
+    
+
+     //dd($products);
+     //this is just another way to return the array
+     //return view('backend/productlist',['products'=>$products]);
+     return view('backend/addingredients', compact('products','inventory'));
+   }
 
     public function index(Products $products)
     {
@@ -122,7 +163,7 @@ class ProductController extends Controller
          $inventory->ing_name = $data['ing_name'];
          $inventory->quantity = $data['quantity'];
          $inventory->units = $data['units'];
-     
+
          $inventory->save();
        // dd($product->product_name);
            return back();
@@ -139,13 +180,17 @@ class ProductController extends Controller
       $cart = Session::get('cart')[0];
       //if not then add these to favourites.
       //Maybe add flash message for each outcome
-      for ($i=0; $i<=count($faves)-1; $i++)
+      if (count($faves) > 0)
       {
-        DB::table('favourites')->insert([
-            'user_id' => Auth::id(),
-            'product_id' => $faves[$i]
-        ]);
+        for ($i=0; $i<=count($faves)-1; $i++)
+        {
+          DB::table('favourites')->insert([
+              'user_id' => Auth::id(),
+              'product_id' => $faves[$i]
+          ]);
+        }
       }
+
       if (!$cart)
       {
         $cart= array();
@@ -180,9 +225,9 @@ class ProductController extends Controller
       }
       Session::forget('cart');
       Session::push('cart', $cart);
-      
+
       return redirect()->route('cart');
-      
+
     }
 
     public function addDrinkToCart(Request $request)
