@@ -11,7 +11,7 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="{{route('sushi')}}">Shop</a></li>
+                                <!-- <li><a href="{{route('sushi')}}">Shop</a></li> -->
                                 <li><a href="{{route('about')}}">About</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>

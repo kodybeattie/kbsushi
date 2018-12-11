@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2>Today's Specials</h2>
+                        <!-- <h2>Today's Specials</h2> -->
                     </div>
                 </div>
             </div>
