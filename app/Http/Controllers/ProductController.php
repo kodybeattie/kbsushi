@@ -33,7 +33,7 @@ class ProductController extends Controller
             'category' => 'required',
              'price' => 'numeric|max:100',
              'ing_quantity' => 'required',
-             
+
              ]);
 
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
            $product->product_description = $data['product_description'];
            $product->price = $data['price'];
            $product->save();
-           
+
          // dd($product->product_name);
              return back();
          };
@@ -71,7 +71,7 @@ class ProductController extends Controller
        $ing->quantity = $data['ing_quantity'];
        $ing->units = $data['ing_unit'];
        $ing->save();
-       
+
      // dd($product->product_name);
          return back();
      };
@@ -117,7 +117,7 @@ class ProductController extends Controller
      ->select('ing_id','ing_name')
      ->get();
 
-    
+
 
      //dd($products);
      //this is just another way to return the array
@@ -186,7 +186,7 @@ class ProductController extends Controller
       $cart = Session::get('cart')[0];
       //if not then add these to favourites.
       //Maybe add flash message for each outcome
-      if (count($faves) > 0)
+      if (isset($faves))
       {
         for ($i=0; $i<=count($faves)-1; $i++)
         {
@@ -241,13 +241,17 @@ class ProductController extends Controller
       $products = Product::getByCategory(1);
       $quantities = $request->input('quantities.*');
       $faves = $request->input('faves.*');
-      for ($i=0; $i<=count($faves)-1; $i++)
+      if (isset($faves))
       {
-        DB::table('favourites')->insert([
-            'user_id' => Auth::id(),
-            'product_id' => $faves[$i]
-        ]);
+        for ($i=0; $i<=count($faves)-1; $i++)
+        {
+          DB::table('favourites')->insert([
+              'user_id' => Auth::id(),
+              'product_id' => $faves[$i]
+          ]);
+        }
       }
+
       $cart = Session::get('cart')[0];
       // if cart empty ****** this works fine **********
       if (!$cart)

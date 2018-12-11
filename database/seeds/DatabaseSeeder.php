@@ -14,15 +14,33 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
       $faker = Faker::create();
-
+      DB::table("users")->insert([
+        'user_type' => 0,
+        'first_name' => 'admin',
+        'last_name' => 'admin',
+        'email_address' => 'admin@admin.com',
+        'phone_number' => '0123456789',
+        'password' => bcrypt('password'),
+        'updated_at' => date("Y-m-d H:i:s"),
+        'created_at' => date("Y-m-d H:i:s")
+      ]);
+      DB::table("users")->insert([
+        'first_name' => 'group5',
+        'last_name' => 'group5',
+        'email_address' => 'group5@group5.com',
+        'phone_number' => '0123456789',
+        'password' => bcrypt('password'),
+        'updated_at' => date("Y-m-d H:i:s"),
+        'created_at' => date("Y-m-d H:i:s")
+      ]);
 //##############USERS###############
       foreach (range(1,50) as $index1)
       {
         DB::table("users")->insert([
           'first_name' => $faker->firstName,
           'last_name' => $faker->lastName,
-          'email_address' => $faker->email,
-          'phone_number' => $faker->phoneNumber,
+          'email_address' => $faker->firstName.rand(1,1000).'@gmail.com',
+          'phone_number' => '0123456789',
           'password' => bcrypt('password'),
           'updated_at' => date("Y-m-d H:i:s"),
           'created_at' => date("Y-m-d H:i:s")
@@ -96,7 +114,7 @@ class DatabaseSeeder extends Seeder
       {
         DB::table("vendors")->insert([
           'vendor_name' => $faker->company,
-          'phone_number' => $faker->phoneNumber,
+          'phone_number' => '0123456789',
         ]);
       }
 

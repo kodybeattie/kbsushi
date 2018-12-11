@@ -1,6 +1,33 @@
 
 @include ('layouts.nav')
 
+<?php
+$first_name = "";
+$last_name = "";
+$email_address = "";
+$phone_number = "";
+
+    if (isset($_POST['first_name']))
+    {
+        $email = $_POST['first_name']; 
+    }
+
+    if (isset($_POST['last_name']))
+    {
+        $email = $_POST['last_name']; 
+    }
+
+    if (isset($_POST['email_address']))
+    {
+        $email = $_POST['email_address']; 
+    }
+
+    if (isset($_POST['phone_number']))
+    {
+        $email = $_POST['phone_number']; 
+    }
+
+?>
 
 <div class="limiter background-display">
 
@@ -21,12 +48,12 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter firstName">
-                    <input class="input100" type="text" name="first_name" placeholder="First Name" required>
+                    <input class="input100" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
                     <span class="focus-input100 fas" data-placeholder="&#xf504;"  style="color:white;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter lastName">
-                    <input class="input100" type="text" name="last_name" placeholder="Last Name" required>
+                    <input class="input100" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>" required>
                     <span class="focus-input100 fas" data-placeholder="&#xf504;">
 
                     </span>
@@ -34,12 +61,12 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter email">
-                    <input class="input100" type="email" name="email_address" placeholder="Email" required>
+                    <input class="input100" type="email" name="email_address" placeholder="Email" value="<?php echo $email_address; ?>" required>
                     <span class="focus-input100 fab " data-placeholder="&#xf59e;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter Phone Number">
-                    <input class="input100" type="text" name="phone_number" placeholder="Phone Number" required>
+                    <input class="input100" type="text" name="phone_number" placeholder="Phone Number" value="<?php echo $phone_number; ?>" required>
                     <span class="focus-input100 fa" data-placeholder="&#xf095;"></span>
                 </div>
 
