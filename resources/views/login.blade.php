@@ -20,8 +20,8 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Email">
-                        <input class="input100" type="text" name="email_address" placeholder="Email" value="<?php if ( isset($_POST['email_address'])) echo $_POST['email_address']; ?>">
-                        <span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
+                        <input class="input100" type="text" name="email_address" placeholder="Email">
+                        <span class="focus-input100 fa" data-placeholder="&#xf007;" value="<?php if ( isset($_POST['email_address'])){echo $_POST['email_address'];} ?>"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">

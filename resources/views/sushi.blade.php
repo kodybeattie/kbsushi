@@ -13,10 +13,10 @@ $products = Product::getByCategory(0);
     <div class="table">
       <div class="layout-inline row th">
         <div class="col col-pro">Product</div>
-        <div class="col col-price align-center ">
-          Price
-        </div>
+        <div class="col col-price align-center">Price</div>
         <div class="col col-qty align-center">QTY</div>
+        <div class="col col-price align-center"></div>
+
       </div>
       @foreach ($products as $sushi)
         <div class="layout-inline row row-bg2">
@@ -35,7 +35,7 @@ $products = Product::getByCategory(0);
               <button type="button" class="qty qty-plus" id="increase" onclick="increaseValue({{ $sushi['product_id'] }})">+</button>
             </div>
           </div>
-          <div class="col col-fav align-right">
+          <div class="col col-fav layout-inline">
             <input type="checkbox" name="faves[]" value="{{ $sushi['product_id'] }}">Favourite
           </div>
         </div>
