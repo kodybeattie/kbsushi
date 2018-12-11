@@ -17,7 +17,7 @@ class CreateProductIngredientsTable extends Migration
             $table->integer('product_id');
             $table->integer('ing_id');
             $table->float('quantity', 5, 2);
-            $table->integer('units');
+            $table->smallInteger('units');
         });
     }
 

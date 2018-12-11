@@ -29,11 +29,15 @@ if (isset($_POST['email_address']))
 
                     <div class="wrap-input100 validate-input" data-validate = "Email">
                         <input class="input100" type="text" name="email_address" placeholder="Email">
+
                         <span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
+
+                        <span class="focus-input100 fa" data-placeholder="&#xf007;" value="<?php echo $email_address; ?>"></span>
+
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="password" placeholder="Password" value="<?php echo $email_address; ?>">
+                        <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
                     </div>
 
