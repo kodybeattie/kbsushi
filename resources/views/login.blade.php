@@ -1,7 +1,15 @@
 
 @include ('layouts.nav')
 
+<?php
+$email_address = "";
 
+if (isset($_POST['email_address']))
+{
+    $email = $_POST['email_address']; 
+}
+
+?>
 
 
 
@@ -20,12 +28,12 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Email">
-                        <input class="input100" type="text" name="email_address" placeholder="Email" value="<?php if ( isset($_POST['email_address'])) echo $_POST['email_address']; ?>">
+                        <input class="input100" type="text" name="email_address" placeholder="Email">
                         <span class="focus-input100 fa" data-placeholder="&#xf007;"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password" value="<?php echo $email_address; ?>">
                         <span class="focus-input100 fa" data-placeholder="&#xf023;"></span>
                     </div>
 
